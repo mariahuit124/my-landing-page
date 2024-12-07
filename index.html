@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn To Code MH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://static-assets.codecademy.com/gamut/apercu-regular-pro.woff" crossorigin="anonymous" as="font" type="font/woff">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Apercu", "Lato", sans-serif;
+            /*font-weight: 400;*/
+            font-style: normal;
+        }
+        body { /* fondo de página*/
+            font-family: sans-serif; /* Tipo de letra */
+            background-color: #fff0e5;
+            color: #0c0d0de4;
+            margin: 0; /* Define el espacio exterior alrededor de un elemento */
+            padding: 0; /* Espacio interior entre el contenido y el borde del elemento */
+            position: relative;
+        }
+
+        header { /* encabezado */
+            background-color: #0b0b0b;
+            color: white ;
+            text-align: center;
+            padding: 1px; /* Espacio interior entre el contenido y el borde del elemento */
+        }
+        header p { /* Letra de encabezado*/
+            font-size: 15px;
+        color: white;
+        }
+        header p span {
+            font-size: 13px;
+            color: rgb(251, 187, 48);
+            font-weight: bold; 
+        }
+        nav { /* Barra de menú */
+            text-align: left;
+            font-size: 15px;
+        }
+
+        nav a { /* Color de letra en barra de menú */
+            color: rgb(15, 14, 14); /* Color de texto */
+            margin: 0 15px; /* Define el espacio exterior alrededor de un elemento */
+            text-decoration: none; /* Agrega o elimina decoraciones del texto como subrayado o tachado*/
+            margin-right: 4px
+        }
+
+        nav a:hover { /* Ubicar */
+            color: #590ae3;
+        }
+
+        .main-content { /* Caja donde se ubica el párrafo */
+            padding: 40px; /* Espacio interior entre el contenido y el borde del elemento */
+            background-color: rgb(252, 246, 246); /* Color de fondo de un elemento.*/ 
+            margin: 40px; /* ESpacio entre laterales */
+            border-radius: 18px; /* Da forma a los bordes */
+            box-shadow: 0 4px 8px rgba(77, 68, 68, 10); /* Sombreado en los bordes de un cuadro, imagen*/
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px; /* Espacio interior entre el contenido y el borde del elemento */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .encabezado {
+            display: grid;
+            grid-template-columns: max-content 3fr max-content;
+            width: 100%;
+            background-color: #fff0e5;
+            padding: 12px 95px;
+            align-items: center;
+        }
+        .log-in-btn {
+            color: black;
+            font-size: 17px;
+            background: transparent;
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .acciones 
+        .sign-up-btn {
+            color: white;
+            font-size: 14px;
+            background-color: #590ae3;
+            border: none;
+            padding: 10px 25px;
+            margin: 10px;
+            border-radius: 4px;
+            font-weight: bold
+
+        }
+        .acciones {
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            align-items: center;
+            gap: 8px;
+        }
+        .home {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+        .registro {
+            padding-top: 32px;
+            padding-left: 64px;
+        }
+        .formulario-box {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .input-box {
+            width: 100%;
+            padding: 13px;
+            margin: 4px 0px;
+            border-radius: 2px;
+            border: 1px solid rgb(145, 143, 143);
+            font-size: 16px;
+            outline-color: #590ae3;
+        }
+        .input-label {
+            font-size: 15px;
+        }
+        .formulario
+        .sign-up-btn {
+            color: white;
+            font-size: 14px;
+            background-color: #590ae3;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            width: 100%;
+
+        }
+        .registro h3 { /*Join the millions learning */
+            color: black;
+            font-size: 24px;
+            line-height: 40px;
+
+        }
+        .registro-requerido { /* Required*/
+            color: black;
+            font-size: 17px;
+            padding: 18px 0px;
+        }
+        .terminos-y-condiciones {
+            color: black;
+            font-size: 12px;
+            margin-top: 25px;
+        }
+        .button-image {
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #565454;
+            background-color: white; 
+        }
+        .sign-up-option {
+            font-weight: bold;
+        }
+        .banner {
+            position: relative;
+        }
+        .carrusel-imagen{
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            left: 0; 
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .carrusel-textos {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 70px 140px;
+        }
+        .texto-1 {
+            color: black;
+            font-size: 60px;
+            margin: 0;
+        }
+        .texto-black-1 {
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            margin-bottom: 12px;
+            max-width: 235px;
+            padding: 4px;
+        
+        }
+        .texto-black-2 {
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            max-width: 220px;
+            padding: 4px;
+        }
+        
+            /*-----------------------------------------------------PARTE 2 PAGINA-------------------------------------------------- */
+
+        .contenedor-2 {
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header { /* Caja Título y subtítulo */
+            text-align: center;
+            padding: 55px;
+        }
+
+        .title {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #060606;
+        }
+
+        .content { /* Contenido principal - C Columna 1 */
+            display: grid;
+            grid-template-columns: 100px 1fr 0.7fr;
+            gap: 5px;
+            max-width: 1024px;
+            margin: 0px auto;
+        }
+
+        /* Aplica color a las 3 Columnas */
+        
+        .column-1 {
+            display: grid;
+            grid-template-columns: max-content;
+            grid-auto-rows: max-content;
+            gap: 15px;
+            justify-content: center;
+            padding-top: 0;
+        }
+        /* Columna 1 */
+        .column-1 .button {
+            color: rgb(7, 7, 7);
+            border-radius: 200px;
+            cursor: pointer;
+            height: 40px;
+            width: 40px;
+            border: 2px solid black; 
+            background-color: rgb(252, 249, 254);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .column-1 .button:hover { /* Cambia el estilo del cursor en botones 1, 2 y 3*/
+            background-color: #eceaf0;
+            border: 15px;
+            border-color: black;
+        }
+
+        /* ----------Inicia Columna 2 - What do you whant to learn about?-------------*/
+        .column-2 {
+            display: grid;
+            grid-template-columns: 1fr; /* No funciona sin dsplay grid*/
+            gap: 10px;
+            padding: 24px 10px;
+            padding-top: 0;
+            grid-auto-rows: max-content;
+        }
+
+        .column-2 .section-title { /* Subtitulo columna 2*/
+            font-size: 24px;
+            margin-bottom: 5px;
+            color: rgb(5, 5, 5);
+            display: flex;
+            flex-direction: column;
+        } 
+
+        .column-2 .buttons-group-1 { /* 10 Botones columna 1*/
+            gap: 9px;
+            grid-template-columns: 1fr 1fr;
+            display: grid;
+            grid-auto-rows: 56px;
+        }
+
+        .column-2 .button { /* 10 Botones columna 2*/
+            background-color: #f7f9fa;
+            color: rgb(3, 3, 3);
+            border: 1px solid black;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 0px 12px;
+        }
+
+        .column-2 .button:hover { /* Define el color de los botones al posicionar el cursor*/
+            background-color: #35affb;
+            border: 15px;
+            border-color: black;
+        }
+
+        /* -----------------Columna 3------------------ */
+        .columna-3 {
+            display: grid;
+            grid-template-columns: max-content;
+            align-items: flex-end;
+            justify-content: flex-end;
+            grid-auto-rows: max-content;
+            justify-items: flex-end;
+            align-content: flex-end;
+
+        }
+        
+        .contenido-img-libro { /* Contenedor texto e imagen*/
+            text-align: center;  /* Centra el texto debajo de la imagen*/
+            padding-top: 0;
+       }
+
+        .contenido-img-libro img { /* Imagen*/
+            height: 200px; /* largo */            
+            margin: 10px 30px;
+            text-align: right;
+       }
+
+        .texto-bajo-imagen { /* Texto debajo de imagen*/
+            text-align: center;
+            margin: 30px 10px;
+            font-size: 15px;
+            color: rgb(10, 10, 10);
+        }
+
+        /* ---------------------------------------------------------PARTE 3--------------------------------------------------*/    
+        .contenedor-3 {
+            background-color: #10162f;
+            width: 100%;
+            min-height: 80vh;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .sub-contenedor-3 {
+            min-height: 200px;
+            width: 100%;
+            max-width: 1140px;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content 50px 1fr 100px;
+            gap: 18px;
+        }
+
+        .header-3 {
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            font-weight: bolder;
+            margin-bottom: 12px;
+        } 
+        .start-learning {
+            font-size: 15px;
+            margin: 0;
+            margin-bottom: 1px;
+        }
+
+        .popular-courses {
+            font-size: 40px;
+            margin: 0;
+        }
+        .categorias-3 { /* Encabeazado Menú */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .contenedor-tabs {
+            width: max-content;
+            display: flex;
+        }
+        .contenedor-tabs .button {
+            padding: 8px 25px;
+            border-bottom: 2px solid white;
+            color: white;
+        }
+
+        .contenedor-tabs .button.active {
+            border-bottom: 4px solid yellow;
+        }
+
+        .contenedor-tabs .button:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+        }
+
+        .contenedor-cartas {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 15px;
+
+        }
+
+        .cartas { /* 4 cartas */
+            background-color: white;
+
+        }
+
+        .course-card {
+            background-color: white;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content 1fr max-content;
+            border: 10px;
+            font-size: 13px;
+            border-radius: 2px;
+            overflow: hidden;
+            min-height: 280px;
+        }
+        .course-card .titulo {
+            font-size: 14px;
+            background-color: #eafdc6;
+            padding: 6px 14px;
+        }
+        .course-card .subtitulo {
+            font-size: 19px;
+            padding: 2px 14px;
+            margin: 0;
+            padding-top: 18px;
+        }
+        .course-card .titulo-career-path {
+            font-size: 14px;
+            background-color: rgb(10, 6, 38);
+            padding: 6px 14px;
+            color: white;
+        }
+        .course-card .parrafo-1 {
+            font-size: 14px;
+            margin: 0;
+            padding: 6px 14px;
+        }
+        .course-card .information {
+            font-size: 14px;
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            border-top: 1px dotted black;
+            margin: 6px 14px;
+            padding-top: 5px;
+        }
+
+        .course-card .footer {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content;
+            padding: 6px 14px;
+        }
+        .course-card .footer .footer-item {
+            border-top: 1px dotted black;
+            margin: 0;
+            padding: 5px 0px;
+        }
+        .acciones-3 { /* Explorer Full Catalog */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .acciones-3 .explorer-full-catalog {
+            background-color: #ffd300;
+            padding: 11px 19px;
+            border-radius: 3px;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .acciones-3 .button:hover { /* Cambia el cursor*/
+            background-color: #35affb;
+            border: 15px;
+            border-color: black;
+        }
+
+        /*-------------------------------------------------------PARTE 4----------------------------------------------------------- */
+        .contenedor-4 {
+            background-color: #10162f;
+            width: 100%;
+            min-height: 80vh;
+            padding: 48px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        .sub-contenedor-4 {
+            min-height: 200px;
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content max-content;
+            gap: 32px;     
+        }
+    
+        .header-4 {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .header-4 .title-the-platform {
+            color: white;
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .header-4 .subtitle-hands-on-learning {
+            color: white;
+            font-size: 40px;
+            margin: 0;
+        }
+    
+        .contenedor-information {
+            display: grid;
+            grid-template-columns: 460px 1fr;
+            grid-template-rows: max-content;
+            gap: 50px;
+            padding: 5px 20px;
+        }
+    
+        .cont-information-1 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content;
+            gap: 20px;
+
+        }
+    
+        .purple-container-1 .title-ai-assisted-container {
+            padding: 25px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content;
+            gap: 15px;
+            border-radius: 12px;
+
+        }
+
+        .purple-container-1 .title-ai-assisted {
+            color: white;
+            font-size: 20px;
+            margin: 0;
+        }
+        
+        .purple-container-1 .paragraph-ai {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            line-height: 26px; /* Separacion entre lineas*/
+        }
+
+        .purple-container-2 .various-titles {
+            color: rgba(255, 255, 255, 0.5);
+            padding: 25px 20px;
+            font-size: 17px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+        }
+    
+        .cont-information-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content;
+            gap: 20px;
+        }
+
+        .cont-information-2 .img-page-4 {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgb(186, 182, 182);
+        }
+
+        .acciones-4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .acciones-4 .buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            
+        }
+
+        .button-get-started {
+            background-color: #ffd300;
+            border-radius: 6px;
+            font-size: 16px;
+            padding: 10px 35px;
+            font-weight: bold;
+        }
+    
+        .button-explore-features {
+            color: #ffd300;
+            background-color: transparent;
+            border: none;
+            font-size: 16px;
+            padding: 10px 6px;
+            font-weight: bold;
+        }
+
+        /*-------------------------------------------------------PARTE 5----------------------------------------------------------- */
+        .contenedor-5 {
+            background-color: #fffae5;
+            width: 100%;
+            min-height: 10vh;
+            padding: 10px 0px;
+            display: grid;  
+            grid-template-columns: 1fr; 
+        }
+
+        .sub-contenedor-5{
+            min-height: 200px;
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content;
+            gap: 52px;
+            padding: 40px 0px;
+        }
+
+        .information-img .img{
+            width: 95%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 0.5px solid rgb(23, 23, 23);
+        }
+
+        .information-text { /* 2do contenedor morado*/
+            padding: 50px 0px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content;
+            gap: 0px 0px;
+            margin: 0;
+            text-align: left;
+        }
+        
+        .h3-powered-by-ai {
+            font-size: 16px;
+            color: black;
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .job-readiness-with-beta {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .job-readiness-with-beta .h5-job-readiness {
+            font-size: 37px;
+            color: black;
+            margin: 0px;
+            padding: 10px 0;
+        }
+
+        .job-readiness-with-beta .beta {
+            font-size: 14px;
+            color: gray; 
+            background-color: transparent; 
+            border: 1px solid rgb(118, 118, 118);
+            border-radius: 14px;
+            padding: 0px 7px; /* Espaciado interno para el óvalo */
+            margin-left: 2px; /* Espaciado a la izquierda para separar de "Job-readiness checker" */
+            margin-bottom: 1px;
+            font-weight: normal;
+            letter-spacing: 1.5px;
+        }
+
+        .p-paragraph {
+            margin: 0;
+            line-height: 21px; /* Separacion entre lineas*/
+            margin-bottom: 0;
+        }
+
+        .button-5 {
+            width: 100px; /* Ancho del botón */
+            height: 40px; /* Altura del botón */
+            font-size: 16px; /* Tamaño del texto (opcional) */
+            border: 2px solid #3a10e5;
+            background-color: transparent;
+            color: #590ae3;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-top: 0;
+            cursor: pointer;
+        }
+
+        /*-------------------------------------------------------PARTE 6----------------------------------------------------------- */
+        .contenedor-6 {
+            background-color: #10162f; 
+            width: 100%;
+            min-height: 10vh;
+            padding: 1px 0px;
+            display: grid;  
+            grid-template-columns: 1fr;
+            margin: 0;
+            gap: 0px 0; 
+        }
+
+        .sub-contenedor-6 {
+            min-height: 200px;
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 70px 80px;
+        }
+
+        .text-container-6 {  /* 1er contenedor morado*/
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content max-content max-content;
+            gap: 10px 10px;
+            padding: 10px 80px;
+        } 
+
+        .text-container-6 .logo-code-academy {
+            position: absolute; /* Posición relativa al borde del viewport */
+            top: 10px; /* Separa el logotipo 10px del borde superior */
+            left: 10px; /* Separa el logotipo 10px del borde izquierdo */
+            width: 20px; /* Ajusta el ancho del logotipo */
+            height: auto; /* Mantiene las proporciones de la imagen */
+            border: 0.5px solid rgb(23, 23, 23);
+        }
+
+        .h3-equip{ /* Equip your team */
+            width: 120%;
+            height: auto;
+            display: block;
+            color: white;
+            font-size: 40px;
+            margin: 0;
+        }
+
+        .p-business {
+            font-size: 18px;
+            color: white;
+            margin: 0px;
+            padding: 15px 0px;
+            width: 300px;
+            height: auto;
+            line-height: 1.5;
+        }
+
+        .button-6 {
+            width: 190px; /* Ancho del botón */
+            height: 45px; /* Altura del botón */
+            font-size: 15px; /* Tamaño del texto (opcional) */
+            background-color: #ffd300;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 0;
+            cursor: pointer;
+            border: none;
+        }
+
+        .logos-container { /* 2do contenedor morado*/
+            padding: 0px 0px;
+            display: grid;
+            gap: 0px 0px;
+            margin: 0;
+            text-align: center;
+        }
+        
+        .cont-logos-4 {
+            display: grid;
+            grid-template-columns: 200px 200px;
+            grid-template-rows: 72px 72px;
+            gap: 30px 40px;
+            justify-items: center;
+            align-items: center;
+            margin: auto;
+            width: max-content;
+
+        }
+        
+        .logos {
+            margin: 0;
+            padding: 98px;
+            width: 20px;
+            height: 30px;
+        }
+
+        /*-------------------------------------------------------PARTE 7----------------------------------------------------------- */
+        .contenedor-7 {
+            background-color: #fff0e5; 
+            width: 100%;
+            min-height: 90vh;
+            padding: 10px 0px;
+            display: grid;  
+            grid-template-columns: 1fr;
+            margin: 0;
+            gap: 0px 0; 
+            box-sizing: border-box;
+        }
+
+        .sub-contenedor-7 {
+            max-width: 1300px; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden; /* Oculta cualquier contenido que exceda las dimensiones especificadas del elemento*/
+            width: 95%;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content 1fr;
+            gap: 40px;
+            padding: 10px 10px;
+        }
+
+        .container-header-7 { /* 1 purple*/
+            margin: 0;
+            color: #333; 
+            display: grid;
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr max-content;
+            align-items: flex-end;
+            max-width: 100%; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden;
+            gap: 10px;
+        }
+                
+        .title-and-subtitle-container-7 {
+            max-width: 1200px;
+            text-align: left;          
+        }
+
+        .title-container-7 {
+            font-size: 44px;
+            margin-bottom: 10px;
+            color: black;
+        }
+
+        .sub-title-container-7 {
+            font-size: 18px;
+            font-weight: normal;
+            margin: 0;
+            color: black;
+        }
+
+        .explore-more-stories {
+            width: max-content; /* Ancho del botón */
+            height: 45px; /* Altura del botón */
+            font-size: 15px; 
+            color: #3a10e5;
+            background-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            padding: 4px;               
+        }
+        
+        .stories { /* cpntenedor cartas*/
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: max-content;
+            justify-content: center;
+            gap: 29px;
+        }
+        
+        .story-card { /* contenedor foto, titulo y texto*/
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 300px 55px 1fr;
+            border: 10px;
+            font-size: 13px;
+            border-radius: 2px;
+            overflow: hidden;
+            min-height: 430px;
+            gap: 7px;            
+        }
+
+        .story-card img {
+            border-color: #0b0b0b;
+            vertical-align: middle;
+            border: 1px solid black;
+        }
+
+        .story-card .titles-cards {
+            color: black;
+            font-size: 21px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .story-card .description-cards {
+            color: black;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        /*-------------------------------------------------------PARTE 8----------------------------------------------------------- */
+        .contenedor-8 {
+            background-color: #ffd300; 
+            width: 100%;
+            min-height: 40vh;
+            padding: 10px 0px;
+            display: grid;  
+            grid-template-columns: 1fr;
+            margin: 0;
+            gap: 0px 0; 
+            box-sizing: border-box;
+        }
+
+        .sub-contenedor-8 {
+            max-width: 1300px; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden; /* Oculta cualquier contenido que exceda las dimensiones especificadas del elemento*/
+            min-height: 20vh;
+            width: 95%;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content;
+            gap: 10px;
+            padding: 10px 10px;
+        }
+
+        .left-container-8 { /* 1 purple*/
+            margin: 0;
+            padding: 20px;
+            color: #333; 
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 100%; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden;
+            gap: 10px;
+        }
+
+        .left-container-8 h3 { /* Titulo */
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            color: black;
+            max-width: 1200px;
+        }
+
+        .right-container-8 { /* 2 purple */
+            margin: 0;
+            color: #333; 
+            display: grid;
+            grid-template-rows: max-content;
+            grid-template-columns: 1fr 1fr 1fr;
+            justify-content: center;
+            align-content: center;
+            gap: 20px;
+            max-width: 100%; 
+            overflow: hidden;
+        }
+
+        .right-section { /* 3 C*/
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 35px 35px;
+            gap: 5px;
+            margin: 0;
+            padding: 0px 0px;
+            overflow: hidden;
+            min-height: 50px;
+        }   
+        
+        .right-section h3 {
+            color: black;
+            font-size: 33px;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 34px;
+        }
+
+        .right-section p {
+            color: black;
+            font-size: 22px;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            font-weight: bold;
+        }
+
+        /*-------------------------------------------------------PARTE 9----------------------------------------------------------- */
+        .contenedor-9 {
+            background-color: #3a10e5; 
+            width: 100%;
+            min-height: 65vh;
+            padding: 10px 0px;
+            display: grid;  
+            grid-template-columns: 1fr;
+            margin: 0;
+            gap: 0px 0; 
+            box-sizing: border-box;
+        }
+
+        .sub-contenedor-9 {
+            max-width: 1300px; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden; /* Oculta cualquier contenido que exceda las dimensiones especificadas del elemento*/
+            min-height: 20vh;
+            width: 95%;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content;
+            gap: 10px;
+            padding-top: 55px;
+            padding-bottom: 15px;
+        }
+
+        .left-container-9 {
+            margin: 0;
+            padding: 20px;
+            color: #333; 
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 100%; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden;
+            gap: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .left-container-9 img {
+            vertical-align: middle;
+        }
+
+        .right-container-9 {
+            margin: 0;
+            color: #333; 
+            display: grid;
+            grid-template-columns: max-content;
+            grid-template-rows: max-content max-content max-content;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            gap: 15px;
+            max-width: 100%; 
+            overflow: hidden;
+        }
+
+        .right-container-9 h3 {
+            font-size: 40px;
+            display: flex;
+            justify-content: left;
+            color: white;
+            max-width: 1200px;
+            margin: 0;
+
+        }
+
+        .right-container-9 p {
+            color: white;
+            margin: 0;
+        }
+
+        .button-sign-up-9 {
+            background-color: #ffd300;
+            border-radius: 4px;
+            border: none;
+            width: 86px;
+            height: 38px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+     
+        /*-------------------------------------------------------PARTE 10 ----------------------------------------------------------- */
+        .contenedor-10 {
+            background-color: #fff0e5; 
+            width: 100%;
+            min-height: 65vh;
+            padding: 10px 0px;
+            display: grid;  
+            grid-template-columns: 1fr;
+            margin: 0;
+            gap: 0px 0; 
+            box-sizing: border-box;
+        }
+
+        .sub-contenedor-10 {
+            max-width: 1300px; /* asegura que el elemento no sea más ancho que el contenedor en el que está ubicado.*/
+            overflow: hidden; /* Oculta cualquier contenido que exceda las dimensiones especificadas del elemento*/
+            min-height: 20vh;
+            width: 95%;
+            margin: 0 auto;
+            height: 100%;
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-template-rows: 1fr;
+            gap: 10px;
+            padding-top: 20px;
+            padding-bottom: 15px;
+        }
+
+        .sub-contenedor-10 .center-container-10 .divider {
+            width: 1px;
+            height: 100%;
+            background-color: black;
+            margin-right: 40px;
+        }
+
+        .left-container-10 {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+        .columns-10 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .link-column.two-rows{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content max-content max-content max-content 1fr;
+            height: 100%;
+        }   
+
+        .codecademy-logo-10 {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            grid-template-columns: max-content;
+            grid-template-rows:  max-content max-content;
+        }
+               
+    </style>
+</head>
+
+    <!-- --------------------------------------------- ---- Encabezado  ----------------------------------------------------------- -->
+<body>
+<header>
+        <p>CYBER WEEK SALE: Get 50% off a year of Pro or Pro Student with code
+            <span>CIBERWK24</span></p>
+    </header>
+    <div class="encabezado">
+        <img src="https://w7.pngwing.com/pngs/119/152/png-transparent-codecademy-learning-computer-programming-code-org-education-j-s-academy-blue-text-computer.png" alt="" height="35px">
+        <nav class="menu">
+            <a href="#">                
+            </a>
+            <a href="#">Catalog</a>
+                <img src="https://w7.pngwing.com/pngs/709/981/png-transparent-computer-icons-arrow-drop-down-list-down-arrow-angle-rectangle-triangle-thumbnail.png" alt="" height="12px">
+            <a href="#">Resources</a>
+                <img src="https://w7.pngwing.com/pngs/709/981/png-transparent-computer-icons-arrow-drop-down-list-down-arrow-angle-rectangle-triangle-thumbnail.png" alt="" height="12px">
+            <a href="#">Community</a>
+                <img src="https://w7.pngwing.com/pngs/709/981/png-transparent-computer-icons-arrow-drop-down-list-down-arrow-angle-rectangle-triangle-thumbnail.png" alt="" height="12px">
+            <a href="#">Pricing</a>
+                <img src="https://w7.pngwing.com/pngs/709/981/png-transparent-computer-icons-arrow-drop-down-list-down-arrow-angle-rectangle-triangle-thumbnail.png" alt="" height="12px">
+            <a href="#">Career Center</a>
+            <a href="#">For Business</a>
+    
+        </nav>
+        <section class="acciones">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB_pDGaTKHoQVE-76Dw57Wda-X6IWONmGJw&s" alt="" height="22px">
+
+            <button class="log-in-btn">
+                Log In
+            </button>
+            <button class="sign-up-btn">
+                Sign Up
+            </button>
+            
+        </section>
+    
+    </div>
+    <div class="home">
+        <div class="banner">
+            <div class="carrusel-imagen">
+                <img src="https://images.ctfassets.net/go6kr6r0ykrq/42kfrUxHoba5qfF9jh8ud/e7d1b60a4d30055c9ef46476d64d554b/Carousel_v2_sqaure.svg" alt="" height="550px"> <img src="" alt="">
+            </div>
+            <div class="carrusel-textos">
+                <h3 class="texto-1">BUILD AI SKILLS</h3> 
+                <div class="texto-black-1">AI courses and case studies
+                    on ChatGPT, NLP, and more</div>
+                <div class="texto-black-2">AI-powered features for
+                    efficient learning</div>
+            </div>      
+        </div>
+        
+        
+        <div class="registro">
+            <div class="formulario-box">
+                <h3>Join the millions learning to code with Codecademy for free</h3>
+                <p class="registro-requerido">* Required</p>
+                <form class="formulario" action="/submit" method="POST">
+                    
+                    <label class="input-label" for="email*">Email*:</label>
+                    <br>
+                    <input class="input-box" type="text" id="nombre" name="nombre" required><br><br>
+            
+                    <label class="input-label" for="password*">Password*:</label>
+                    <br>
+                    <input class="input-box" type="email" id="email" name="email" required><br><br>
+                    
+                    <button class="sign-up-btn" type="submit">Sign Up</button>
+                </form>
+                <p class="terminos-y-condiciones">
+                    By signing up, you agree to the Codecademy <a href="https://www.codecademy.com/terms" target="_blank" >Terms of Service</a> and <a href="https://www.codecademy.com/policy" target="_blank">Privacy Policy.</a> This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                </p>
+                <p class="sign-up-option">Or sign up using</p>
+                <div>
+                    <button class="button-image">
+                        <img src="https://w7.pngwing.com/pngs/869/485/png-transparent-google-logo-computer-icons-google-text-logo-google-logo.png" alt="" height="21px">
+                    </button>
+                    <button class="button-image">
+                        <img src="https://e7.pngegg.com/pngimages/631/1001/png-clipart-computer-icons-facebook-social-media-email-share-icon-facebook-blue-text-thumbnail.png" alt="" height="21px">
+                    </button>  
+                    <button class="button-image">
+                        <img src="https://w7.pngwing.com/pngs/646/324/png-transparent-github-computer-icons-github-logo-monochrome-head-thumbnail.png" alt="" height="21px">
+                    </button>
+                    <button class="button-image">
+                        <img src="https://e7.pngegg.com/pngimages/560/373/png-clipart-apple-computer-icons-apple-heart-logo.png" alt="" height="21px">
+                    </button>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!--  ----------------------------------------------- PARTE 2 ------------------------------------------------------ -->    
+    <div class="contenedor-2">
+        <!-- Título y subtítulo -->
+        <div class="header">
+            <div class="title">Find what's right for you</div>
+            <div class="subtitle">Answer 3 quick questions to get recommendations that match your interest.</div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="content">
+            <!-- Columna 1 -->
+            <div class="column column-1">
+                <div class="button">1</div>
+                <div class="button">2</div>
+                <div class="button">3</div>
+            </div>
+
+            <!-- Columna 2 -->
+            <div class="column column-2">
+                <div class="section-title"> <b>What do you want to learn about?</b></div>
+                <div class="buttons-group-1">
+                    <div class="button">Web Development</div>
+                    <div class="button">Computer Science</div>
+                    <div class="button">Artificial Inteligence</div>
+                    <div class="button">Game Development</div>
+                    <div class="button">Data Visualization</div>
+                    <div class="button">Data Science</div>
+                    <div class="button">Web Design</div>
+                    <div class="button">Machine learning</div>
+                    <div class="button">Mobile Development</div>
+                    <div class="button">Not Sure Yet</div>
+                </div>
+            </div>
+
+            <!-- Columna 3 -->
+            <div class="columna-3">
+                <div class="contenido-img-libro">
+                    <img src="https://static-assets.codecademy.com/assets/homepage/onboarding-quiz/career-interest.svg" alt="">
+                    <p class="texto-bajo-imagen">We have hundreds of courses that <br>cover just about everything.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  ----------------------------------------------- PARTE 3 ------------------------------------------------------ -->    
+
+    <div class="contenedor-3"> 
+        <div class="sub-contenedor-3">
+            <div class="header-3">
+                <h5 class="start-learning">Start Learning</h5> 
+                <h3 class="popular-courses">Popular Courses</h3>
+            </div>
+            <div class="categorias-3">
+                <div class="contenedor-tabs">
+                    <div class="button active">AI</div>
+                    <div class="button">Free</div>
+                    <div class="button">New to coding</div>
+                    <div class="button">Most Popular</div>
+                    <div class="button">Skill paths</div>
+                    <div class="button">Career paths</div>
+                </div>
+                
+            </div>
+            <div class="contenedor-cartas">
+                <div class="course-card">
+                    <div class="titulo">Free course</div>
+                    <h3 class="subtitulo">Intro to Generative AI</h3>
+                    <p class="parrafo-1">Dive into the many forms of generative AI and learn how we can best use these new technologies!</p>
+                    <div class="information">
+                        <span><strong>Beginner</strong> Friendly</span> 
+                        <span>1 hour</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="titulo">Free course</div>
+                    <h3 class="subtitulo">Learn How to Use ChatGPT</h3>
+                    <p class="parrafo-1">Learn how ChatGPT works, how to use it in your everyday life, and more!</p>
+                    <div class="information">
+                        <span><strong>Beginner</strong> Friendly</span> 
+                        <span>1 hour</span>
+                    </div>
+                </div>       
+                <div class="course-card">
+                    <div class="titulo">Free course</div>
+                    <h3 class="subtitulo">Learn How to Use AI for Coding</h3>
+                    <p class="parrafo-1">Learn how to use AI tools like ChatGPT to generate code and expedite development.</p>
+                    <div class="information">
+                        <span><strong>Beginner</strong> Friendly</span> 
+                        <span>1 hour</span>
+                    </div>    
+                </div>
+                <div class="course-card">
+                    <div class="titulo-career-path">Career path</div>
+                    <h3 class="subtitulo">Machine Learning/AI Engineer</h3>
+                    <p class="parrafo-1">Machine Learning/AI Engineer Build end-to-end ML applications and power many of the apps we use every day.</p>
+                    <div class="footer">
+                        <p class="footer-item">Includes 7 Courses</p>
+                        <p class="footer-item">With Certificate</p>
+                        <div class="information footer-item">
+                            <span> <strong>Intermediate</strong></span>
+                            <span>50 Hours</span>
+                        </div>
+                    </div>
+               
+                </div>
+            </div>
+            
+            <div class="acciones-3">
+                <button class="explorer-full-catalog">Explorer Full Catalog</button>
+            </div>
+        </div>
+    </div>
+    
+    <!--  ----------------------------------------------- PARTE 4 ------------------------------------------------------ -->    
+    <div class="contenedor-4"> 
+        <div class="sub-contenedor-4">
+            <div class="header-4">
+                <h5 class="title-the-platform">The Platform</h5> 
+                <h3 class="subtitle-hands-on-learning">Hands-on learning</h3>
+            </div>
+            <div class="contenedor-information">
+                <div class="cont-information-1">
+                    <div class="purple-container-1">
+                        <div class="title-ai-assisted-container">
+                            <h3 class="title-ai-assisted">AI-assisted learning</h3>
+                            <p class="paragraph-ai">Make progress faster with our AI Learning Assistant, a tool that automatically understands your current course, instructions, and solution code — and gives you instant, personalized feedback.</p>
+                        </div>
+                    </div>
+                    <div class="purple-container-2">
+                        <div class="various-titles">
+                            <h3>Real-world projects</h3>
+                            <h3>Job-readines checker</h3>
+                            <h3>Interview simulator</h3>
+                            <h3>Assessments</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont-information-2">
+                    <div class="img-page-4">
+                        <img src="https://images.ctfassets.net/go6kr6r0ykrq/2J9Iiiot6gqvSzqc0QLd8l/581fa9bef7e50f2a3a939b1637cc3646/ala_demo.png" alt width="100%">
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="acciones-4">
+                <div class="buttons">
+                    <button class="button-get-started">Get Started</button>
+                    <button class="button-explore-features">Explore features</button>
+                </div>
+
+            </div>
+        </div>                
+    </div>       
+
+    <!--  ----------------------------------------------- PARTE 5 ------------------------------------------------------ -->
+    <div class="contenedor-5">
+        <div class="sub-contenedor-5">
+            <div class="information-img">
+                <img src="https://static-assets.codecademy.com/assets/feature-marketing/job-readiness-checker.gif" alt="" width="95%">
+                <button class="play-pause" onclick="togglePlayPause()">⏯️</button>
+            </div>
+            <div class="information-text">
+                <h3 class="h3-powered-by-ai">✦ Powered by AI</h3>
+                <div class="job-readiness-with-beta">
+                    <h5 class="h5-job-readiness">Job-readiness-checker</h5> 
+                    <span class="beta">Beta</span>
+                </div>
+                <p class="p-paragraph">See how well your skills and experience match the job postings you’re interested in. Our job-readiness checker uses artificial intelligence to show you what you need to work on to qualify for a role.</p>
+            <button class="button-5">Try it out</button>
+            </div>
+
+
+        </div>
+    </div>
+    
+    <!--  ----------------------------------------------- PARTE 6 ------------------------------------------------------ -->
+    <div class="contenedor-6">
+        <div class="sub-contenedor-6">
+            <div class="text-container-6">
+                <img src="https://w7.pngwing.com/pngs/119/152/png-transparent-codecademy-learning-computer-programming-code-org-education-j-s-academy-blue-text-computer.png" alt="logo-code-academy" width="28%">
+                <h3 class="h3-equip">Equip your team with skills for today — and tomorrow</h3>
+                <p class="p-business">Reach business and professional goals with technical training for your whole team.</p>
+            <button class="button-6">Explore business plans</button>
+            </div>
+            <div class="logos-container">
+                <div class="cont-logos-4">
+                    <div class="logo">
+                        <img src="https://www.codecademy.com/_portal/_next/static/images/AirbnbLogo.a0cb7f0965e2eb87edb61f93e7faf04f.svg" alt="Airbnb" height="100%">
+                    </div>
+                    <div class="logo">
+                        <img src="https://www.codecademy.com/_portal/_next/static/images/AmazonLogo.b6826d02d5622aed06693aaa55733147.svg" alt="Amazon" height="100%">
+                    </div>
+                    <div class="logo">
+                        <img src="https://www.codecademy.com/_portal/_next/static/images/DailymotionLogo.1b85cdc04be9665e8cfa5fd86bf4f9fa.svg" alt="Dailymotion" height="100%">
+                    </div>
+                    <div class="logo">
+                        <img src="https://www.codecademy.com/_portal/_next/static/images/ReverbLogo.7641d56957515031ecf02eac4a2aeaf2.svg" alt="Reverb" height="100%">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  ----------------------------------------------- PARTE 7 ------------------------------------------------------ -->
+    <div class="contenedor-7">
+        <div class="sub-contenedor-7">
+            <div class="container-header-7">
+                <div class="title-and-subtitle-container-7">
+                    <h3 class="title-container-7">Stories from real people</h3>
+                    <h5 class="sub-title-container-7">Read inspiring stories from the Codecademy community.</h5>
+                </div>
+                <div class="button-container-7">
+                    <button class="explore-more-stories">Explore more stories →</button>
+                </div>
+            </div>
+            <div class="stories">
+                <div class="story-card">
+                    <img src="https://images.ctfassets.net/go6kr6r0ykrq/Sk3Knek82fDxSX5eZqdzX/bac59c63ff86d8d52ef9e1559e8eb381/De-Shaun-Broadnax.jpeg" alt="" width="100%">
+                    <h2 class="titles-cards">Frelancer to Developing Apps for NASA</h2>
+                    <p class="description-cards">De'Shaun B., Associate Software Engineer, Winter Park</p>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://images.ctfassets.net/go6kr6r0ykrq/2ao4ZIQinCIgAt4UuGNR3z/b5b0608e9ae47b42ba6aa5e18e97411e/SerenaIsone1.jpeg" alt="" width="100%">
+                    <h2 class="titles-cards">Lessons from a Product Owner turned Engineer</h2>
+                    <p class="description-cards">Serena I, Software Developer @ Adidas, South Holland</p>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://images.ctfassets.net/go6kr6r0ykrq/IEAxMFzasjkSr11XsNGso/ef9c1fcd18c5abf06e8064dc5352060c/Julia-Jubileu.jpeg" alt="" width="100%">
+                    <h2 class="titles-cards">From Film to Full-Stack Engineer in 11 Months</h2>
+                    <p class="description-cards">Julia J., Ruby on Rails Developer, Sao Paulo</p>
+                </div>
+
+                <div class="story-card">
+                    <img src="https://images.ctfassets.net/go6kr6r0ykrq/6zlCvqSouWnN7NGDTvidvT/3d4f8caef82cdaef8017edfd7e57f94f/Cristian-Tera__n.jpeg" alt="" width="100%">
+                    <h2 class="titles-cards">Technical Analyst to Front-End Engineer in 6 Months</h2>
+                    <p class="description-cards">Cristian I., Front-End Engineer @ Grid Dynamics, Guadalajara</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  ----------------------------------------------- PARTE 8 ------------------------------------------------------ -->
+    <div class="contenedor-8">
+        <div class="sub-contenedor-8">
+            <div class="left-container-8">
+                <h3 class="join-in-on-something-big">Join in on <br>something big</h3>
+            </div>
+            <div class="right-container-8">
+                <div class="right-section">
+                    <h3>50M</h3>
+                    <P>Learners</P>
+                </div>
+                <div class="right-section">
+                    <h3>190+</h3>
+                    <P>Countries</P>
+                </div>
+                <div class="right-section">
+                    <h3>3.7B</h3>
+                    <P>Code submits</P>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!--  ----------------------------------------------- PARTE 9 ------------------------------------------------------ -->
+<div class="contenedor-9">
+    <div class="sub-contenedor-9">
+        <div class="left-container-9">
+            <img src="https://images.ctfassets.net/go6kr6r0ykrq/1oQJa4fz2aX6URLTtoS4mC/b2ac0d89255978ee59a8ea0c19ca1bc8/LearnersDesktop.webp" alt="" width="75%">
+        </div>
+        <div class="right-container-9">
+            <h3>Start for free</h3>
+            <p>If you've made it this far, you must be at least <br>a little curious. Sign up and take the first step <br>toward your goals.</p>            
+            <button class="button-sign-up-9">Sign Up</button>
+        </div>
+    </div>
+</div>
+
+    <!--  ---------------------------------------------- PARTE 10 ------------------------------------------------------ -->
+<div class="contenedor-10">
+    <div class="sub-contenedor-10">
+        <div class="left-container-10">
+            <div class="columns-10">  
+                <div class="link-column two-rows">
+                    
+                    <h3>Company</h3>
+                    <p>About</p>
+                    <p>Careers</p>
+                    <p>Affiliates</p>
+                    <div class="social-icons">
+                        <a href="https://www.flaticon.com/free-icon/twitter_5968958"></a>
+                    <span>🖇️</span> <span>📘</span> <span>📷</span> <span>🎶</span>
+                    </div>
+                    <div class="codecademy-logo-10">
+                        <img src="https://w7.pngwing.com/pngs/119/152/png-transparent-codecademy-learning-computer-programming-code-org-education-j-s-academy-blue-text-computer.png" alt="logo-code-academy" width="100px" alt="">
+                        <br><small>from skillsoft</small>
+                    </div>
+                </div>   
+                
+          
+                <div class="link-column">
+                    <h3>Resources</h3>
+                    <p>Articles</p>
+                    <p>Blog</p>
+                    <p>Cheatsheets</p>
+                    <p>Code challenges</p>
+                    <p>Docs</p>
+                    <p>Projects</p>
+                    <p>Videos</p>
+                    <p>Workspaces</p>
+                    <h3>Support</h3>
+                    <p>Help center</p>           
+                </div>
+                
+                <div class="link-column">
+                    <h3>Plans</h3>
+                    <p>For individuals</p>
+                    <p>For students</p>
+                    <p>For business</p>
+                    <p>Discounts</p>
+                    <h3>Community</h3>
+                    <p>Visit community</p>
+                    <p>Code Crew</p>
+                    <p>Events</p>
+                    <p>Learner stories</p>                
+                </div>
+            </div>
+        </div>
+        <div class="center-container-10">
+            <div class="divider">
+                
+            </div>
+        </div>
+        <div class="right-container-10">
+            <div class="columns-10">
+                <div class="link-columns">
+                    <h3>Subjects</h3>
+                    <p>AI</p>
+                    <p>Cloud computing</p>
+                    <p>Code foundations</p>
+                    <p>Computer science</p>
+                    <p>Cybersecurity</p>
+                    <p>Data analytics</p>
+                    <p>Data science</p>
+                    <p>Data visualization</p>
+                    <p>Developer tools</p>
+                    <p>DevOps</p>
+                    <p>Game development</p>
+                    <p>IT</p>
+                    <p>Machine learning</p>
+                    <p>Math</p>
+                    <p>Mobile development</p>
+                    <p>Web Design</p>
+                    <p>Web development</p>
+                    </div>
+                
+                <div class="link-column">
+                    <h3>Languages</h3>
+                    <p>Bash</p>
+                    <p>C</p>
+                    <p>C++</p>
+                    <p>C#</p>
+                    <p>Go</p>
+                    <p>HTML & CSS</p>
+                    <p>Java</p>
+                    <p>JavaScript</p>
+                    <p>Kotlin</p>
+                    <p>PHP</p>
+                    <p>Python</p>
+                    <p>R</p>
+                    <p>Ruby</p>
+                    <p>SQL</p>
+                    <P>Swift</P>
+                </div>
+
+                <div class="link-column">
+                    <h3>Career building</h3>
+                    <p>Career paths</p>
+                    <p>Career center</p>
+                    <p>Interview prep</p>
+                    <p>Professional certification</p>
+                    <p>Compare to bootcamps</p>
+                    <p>---</p>
+                    <p>Full catalog</p>
+                    <p>Beta content</p>
+                    <p>Roadmap</p>
+                    <h3>Mobile</h3>
+                    <div class="app-buttons">
+                        <div class="app-store">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWkAAACMCAMAAACJW6j5AAAAkFBMVEUAAAD////m5ubl5eXk5OShoaH19fXy8vL5+fnw8PDr6+uysrJAQED8/Pzp6enx8fG5ubmYmJh6eno2NjbAwMCgoKDS0tLX19epqanJycmKiopPT09zc3MnJydmZmYPDw9GRkZeXl52dnaFhYWSkpIVFRUfHx8vLy9JSUkoKChBQUFqamoTExNfX19UVFSIiIglVX/aAAAUS0lEQVR4nO1diZqqOgxmXwdEFIXRo86o4+z3/d/uNmmBshSKOovnkPN992YwkPC3TZNuKCqSoRHykHV0wuoT5CfIO8h7IGJw4iEn7iJvI29RceCNAHkNCdkAbtWpJgvFbeRdTlNY19Q0zG4YFpTivCaX0yQwTC/FK5okDJOHQNeUEekR6RHpEelLkWbv7xg1pA2Hu48TDzlxCaS5FxIhzTSFdU1euyaBYUORNhqGNZAWGSYPQY50oIVhmBco8lTNBPm86gDPLKyLMzXIWw3xkPD5+3O3Wpwmt6FJYNikUxOyYcMwixPnNYXtmroNOwsCTVMMoLwWADHbkGd3IM/KBnlWrEB5fQNitiHPXqUuHnLizDZO3KuL5w2h1MQb5nKGaV2GsRbaZVgTArsfgqZhTQhywxTOhzpneLahLneIZ+tw7la/pt/W64xIj0j/lUjrLb018EaLGsLrLb21UVMzsLdu0aTrNcNyd1iK85q0roDl/EhKBEFLZeuBQPGQAgcIWRf4wEbeQt5FHiUCgbiFvI38hLvVK291yluZ+ORSTQPFB2q6GAIn4MXzeFrX9aK3Bp7WAhf5vLcGnhPXOPG8twY+762Bz3trwuYNodRkIW83NGl1TWFD04QT93hxozCsqalpmFYa1oSgaVgDgqZhTQhyw8YccczGR6RHpC9DmngUvemnK+5QrzopnXNSeouT0jk/jcReqNRU8dM65w47NFXcocAwzk8XkVS7YVr91hY/LWlYLwQKdqGWi8TxNvI28hbynIjTEJ80xCftt/LivCaBePNWkWGdmux+TRdD0GeYotdqgdFSCwxxLbhWb90SRtQaQksY4coa1myhl0RSpSaZSCrXNOaIYzb+zyKtN5CmWDR764lWeyGBuMa/kECcvRAnXkFaKw3jkW5ooobZXYaFnZo8TpNWM0wWaQk/7WokndRIvkmIDs5aSHTAGVk6IOshT8dyJ8hrdXEN2UlD3EU+rItT3u7UZFuthmkCcbfdMJ3TJDLMrhsGUwYkG+cQa/HTzK0rNhJV08KTvxx3MffTNDVHahLBxZ8brtOOXslbVnc87RphuPATM/V9wHoEu0oACSCTJP4iZB5KELAYeneOaHuLlMB8eFu9HLfKSE16P55W64NPUFpwvc7wbNz1TT95OP706/x6Oj4kfuI75yPtkvbx8NNvcSP0QHyrLTnu0ciqvCRNxvosS8c0TdwuP82ScxoSYf5Oe0x34pnp4afNvyk6pCaNDy2bA5WNs1iNeLoY/fJItPHTtt8YkVCEH5CpxdOiHDHMEv/lp02/MXrxk6U4RxQinfrxT1t+cxT76XCkF6b/03bfIPmJIURaLwdn+XEPJ0r3P232DdJ9Om/46Xx82uHWLdAZBLrMwRwj6TOIRNWwNITNs1QWuwjGPXQ38Wc/bfYN0sw3DU0wj9ieI2pGMrrpc4g46mHZeLhIxmD6HErNRTgM6cw0f9rom6RpL9K1VfRalk5/2uibpCTNtOpGghxgJQTyAiAHeRdYdUT6PJqmmRoELiLpIKoe8kEgWj+9+MVIHzebfqHVejXsqU/rt/PMqdAUZwRa108LcsTrIP1sdmb0pwhpaOQ+U4N+IV8dGDx9qs6wG1qJQ1oyG78G0lPi+DsjmDuV0XJQ7D5TrX6htFs1R48GSq5Ue4gRAvoJpHfYwXaOcBOk4zjeR8RxPQ148pWR3qtz+N+zOhlgg4g6kBZsxrsY6QdaWx+7ZAjSiPDMUZf0yiyOsXr/meEPdyf47+luqxxnL8pdHFPxHOlndgFoE8cnxm4fyeUq0k9xvKPciTw/jj/Ln073anacQZ2eVH55i8/x2wzptv2IZTzNb+X15hcivWJ+oVOIIP0HGVIs0H8dM7glOyrKWl2Qv2O8/w6APajpFH68VwqkZzgWHOEDHjFqndOXRbmERzpCF/WCD9M+sSYVv+V2PqseerMMr8YAk7Me/N7TdN6fueiVzOVCpOncOjNbRAXSiqEm5L+66iaJp2oKvL+CAJEo4w0QvFcNNUpJ1XjOkX4PVGOaOqiClGu0Txx8yJ5gSkKtJYf0UrXT6VK1nuBeb7JISIkm+Y/ZQjXmc0DadTOT/AIpGynj9M1X1cGjbFJIa1es0yar0p+dUiXSEUQKKWKsaPCuS4DU1gAuX90D0uqdAiXi50hntBgtlYQ3byl4qY2qK1DGAPEb1xnHtA1kUGKzALuORA2V8mdsC6S0IFBK4Zd3BzGOc6cmT9+ONFXFmrOQSqTngKCBr0rez4CiOig7NfaWUNO3gDQ+ywdvgUg/OehwCGZlu4GGQII1XANklEgvaQX+gJ9ZhLjikGY94o66ugf45YNBbDtD1wZ8t/f4oE/1esT4On2A4nkGfqVaW+WVAHivnlL1qADwhEeHPC2QvlMd7A0fEZS7NDM8B7B6YyBxPWKo0kyHIm1tUYdWWLHP67RLbdLQA+EQM+0+htBgpL3LkKbOIzz1iJVIewCGpb4C/4y10nWVzCI1bP2AkHUjTUp2spjPeaST4UhPqE2ItEuTqvnQQfoOpL8kypuXUUEXFUj/p0Iz9VSMq94QhUw9wRNU/4A4NZD+46DjJkHJAlw7TMWdAMoHloAsSqQNGtWvKki3eA+GtFEW13DqiPK+JHNZqK5/1y9GkEafGtPuK6Kx1wLz6FidAvALLwtApoE08b54JQQYVRXqXoKe1kHUd1yPeKAV2IfHt9Zp9PRFndaxzKB5bc0iQpGlb8oRT69sQSrzCe+fb5vnDnmC9Dybz0OVViHSyWXrt4y6hS1pY38AJQp/E2lys79ZL7FyLtTFwyrBsBg8V7o+BB4X5bnqcr2JMHppQZqEKYfHIhtH70G8vLN/flj2delN+gakn+4xkXD8vA85HdjQ7PJetCA4H/dwWNWZ4RaIkPpGD+EndRMNOdCXTjBSo/HDBlcsL+Hhd/hSLHqgrmvPjTC9oGn2g1I0o0/a/VHSVRa0UJuwH/fRsO50oI16kL7CqGmqFqRPSTK2zsoLqiVY0HB8jAmtufRgnaZ5XvYZY5k90iR7F6PUM2TLxzWTidPkg3JPh/Twh+TS+MfD1PxQXvmMW9mYPh0XeIrx3j+VVHsTP8KlNRWgv7we/PRjEARIHaOmgpmAYUi/emo3Da8cN0odMwEUifrsVjgoc9n14KyqZ/flt0YkyhPNbjHmkhzx1A+0TMz3V9DXZuNLCaCXQwagb5iGIz0gR9xLAD04WrpV6ke6tlpsiJ/u6w3Vf8dLU6S7Tp1orIB05ev0h0SV7hsAuTpt73Y/s6yQIO0KVkAKVvXKR3lRP9B9y6EOWZYtrrcufj23oCIFnj90JO5yysc95E+dkEfa7ke6b9MoqjQufUlGa5fTvPjumv2F2fisH+hFzyOY/3m9+DWB/JpyiUU416QvRFrCTfc5j0hOTIrYtNpyPp+znpp5EFMz9G/IVDuQFuySk0Z63Y90nwdmYtdY2ILz3vko3m7JPRbq+jeEQC1+Ot8l177z05GOPeJ+pHvm8uEJGSStV9juMa+W7LxU/21IZ45g5ycFo76bWT6elkC6c3UNDC4TNKDVXyG9AXV8t+AUj/02pOfaoFMn5LNxCe/RvSf6CXQeodlfvgIRnoWLb3KCLoDOG6ffhvRXZeObfqS7O6J7KgGTAKWbedMNA27bLyzVMvx84ma7MAxtpygr6O68rNFYdnWkX982sAQ4NZbQ/QRLw8jRPh4WcMmICp81g5G3F2WzKNauPcyhAwuzAUuZvhDpldpPnQ8ADx3TOle2e/BJITfszeZPthC8P5fJkl6frMR3aeqYl7awJX335ZV8oSvGq++H4hGncuQslE6BBo97DBjLc/qR7nrUjhUFvmexUR2QNk5B+QhaCFtYhHZacI+uQYBpVNPfc0hTF8XPCOVdMVgQ0CYKSO8qLyZbrSvjHlU/3X5Ok3zsoWj9SAd/xLcnOTQwm1c0fETagPaeLampOL69hQYPsHnZgu26ri4youG0ldRSw/sogqZj+1GErYOmN8s0iSgmKA5IW6QUA8sxcPoY9KRTuj9Z3cmhwWKPthOvBKe4yWfj9aSsjTq6Ii+vMKbKNXwW0cyhiI50jhJ89ZYdsYeJ3xqx8JuPwzoUxdUy4HvEByyOVXGd/sCy3ZQ0rBOr9bTk33pegaeOePricQ+J4KMjgMOY4x04dCP5oB9FOp+nwXW60EGi91BtNqtA53qqgD5xY7hexEXofJQHDtjJ2xlCDUVHkWYzuSuOp/mQXLT/lasQtjJIC6uEXxYDGJErRaTLpBEb8DZHuvCZ2K3xoUb+xILCmL+cL4dXVb7vsJgJs7w8c/GygwaHJbdt5kvXe1R7FyG1Lwdy1GIQCDx2vgojrt7xyGoYeo9J9e5mDDk1+CJmdZ5DGguoFIdKDQtIZkwJUuHUkN4407ppwLjH8HV5ElmiWn23ktbsLYHQGXxyz9yVcvDnPUOam/uFQm5b0HraRAXabLEShzTUUC4UxHDjmSGd+wjgV8qWkvKqNvpeAXWMT7cfc20PWWtqSQHdusEnQ+SeXuAfuk/WRuNa0Vj0J/QeXMoJvahwYOqRNTb6SA5p0MN1HC8gtKki/dLyAjsZLEjsMRGc9E2fckE8XW4A6KbWFZHwQ+A4Af7DP+j1OtJQQzOGNBfaQlfpiGfdZ1ix6WpzMdJoxGMV6buG+dJIC+cRGdIXzI0rx6DFrjq1puT/NeWoo2xDes68BzcIC669c7AVoUaP1IP0uoo0ejK6HjcnTWqm4ot3X8hU6tZpppaVImzrVA1p+DNldZqbMQDFnT1VzFCsIL2oFjw4YfWjivQf4N/lESjoq/e59GfkrUuYsI3O4bhbpBSAp/kkIlQuUkS3uWdIcyBBleWHObLlclkZOcQgHQeiOKSB5faOoq5Ta484nKTGPbjx6YHr8vqzF7t10nZaq7kzBih7+7KFm+zFaY5YXMY2zse5Wg15mt7VvQfGjKUvyAOYCtJQhvVIXYaa49MMYEP0hbOB+1y4IZxWap839dSa/zZyOGjkmKOxxW2YSo50EcVE9Udj1sIPBpXZIJ8jVorxlD+ygjQf3JOaRFx237wzJRJ7BIIvnF1p/fSkE+j25Y/P8FNljBneD7e+UKStYl+oSvMYmiOqbDk2DnBWNnvThLrsMrEoaFmmXGvAy3mNxZY8U2pI/ynvxD01PWcNFPT1p050DlMLlnL43MtTws4JFLNsyDo8Kds9YhFArMaQVufEk3xmPOqMaNtaYPFt9/S1aF+MxcI8zR/0nRGEh49ecb2CNC0ZA131Gsdi5ZZwfsPuizcx0KLsCl6gNvQEMy+Q1AHSwYF/CHaP6D0qKy7rwWORGhbra1hRfLI/MWDPl06wnIt6lSrSLC4KjGXlMX30HTuKyqR8Ye7f7v3iVV3BOiLMgmsj7Og+dnmUx42o0IgCkX7kJtSaA1f8NAFQ4UoYYjT8rtQL5oFrSFef9J8kCt9y6sQz1ifNzGvw5xxXxwnHwABHpxaT0LiviKenLCcyWMCF3iNWVqzmOm02xvz4UsStvaTlxpLQp6IPD/PaikjzW1v2xSTHXHoJZ9+pE/UPqJ+5b/x5H1dy7uNuvRKPyxwO94fGpNH9/f3hvzJzeY/9yJ8WD2VIk27BjKJUdP7Gc5LptuUu/HXVt97tTbM8rujpMY2iaFru4ns63N9Pq+3veeoTPY8DVtmTKM8TfNmdVRpNq3xj9+JTJy6keo7IqJ6N/z769rMQLiUR0pMR6SvTP4T06D3Oo36kG6dtmiPS5xA9bTP/rmZlP6IgyjOSwccAXJMESL/DK/zqs94T0xBFeYLMxfjZU5F3+/2+JVnYxuR61+kKP070QwFDckQv8cfPEw2ndz+xByJtJel19p38W/Tq45h7H9L8qKmTpt+8F+evoLfUL5BuO3Ui/1wuZo+sTv9wQH2jBIdOANKIZP7FXODL0zZrUZ5hT8aPXwynmW8uIdYYcOqEPlGjsVIPpmnqw1ecB36J0k388ds5w+gDvzEy/JufWRJJnMQ2UkF3UbJwZL6uyo+a4tdVfTP91VnCL6Pn1Izo11WNFqSrp07grDn97pYdOEHgm9EZx2v9o/QRmX4Q2PSrZYgkd+pEID51Ar8I70UJN+ExUgfdTf0kCjWDngwx5NQJC/1NsDRNf7r5R85QOpueNlPfNBck7NAZ0kOycebZgywxU9887Neb1efubiSedp+rzXp/MP3UTBYWQHoB0uBTooSgnRYLFUfiiOBiJmZE+j2KWAfSwm8zl9/NtkNjmc2zORzITJ9PD2cW8BIiF4h/nyYZ8Wg+z5Yah1iOtPDUCW4PxgR5em6CjfyEsnh2JD1JISh5etkR8A1xq1PcaRf/Ak3XMsy2c8QsDjG7su+CAiw4dcKYCPvQQlzjxNmOTMEH5LHd6Fx84zVrQZemsKFpwol7NfHK/iheU9MwTa9p4iE4yzARBMJTJ3SK9ITzNx7zN4V4yIkzNYIEqTEyy96/x7N1GGY3DAtK8eYYsNVlmF6KVzRJGCYPQWc2PiI9In3TSNd2yTE/zbvDsObT9B4nVdkiVvXTeo+fltXkcJo4cUHGK+Gn9R4/fT4ExE/Xz5sYwP8q8W82bPitot3M1+qtB9aCSm/dG0a4stWz2UIFDeErIqk8nuZ8aHuO2O3ZhrrcIZ6tw7lb/Zp+W68zIj0i/dch/cV+WjarchqaLvTTLRmvRGIp7acNgWEdfpr2pHTEg+NZj9lyamSvuN0u3rzVvlSTQLxxdqhQ01cZ1gaBfDzd6K1vIZ5uGZnkDfvWeJrd9xs9W4dhN5wjjkiPSP9tSLf31tccn5bvrbVzApaGYVKRVP3Wrxyfrn9fxGNzLnTdQsvXMmo8fyuboum69Wc02f2avtwwmXlEQW/NhxGVWqDL9dZ6X29dM6wlnpYMIwpfKBdJ9RgmE0m1QDDmiGM2PiI9In0e0v8DSAE7vc1/zRwAAAAASUVORK5CYII=" alt="" width="150px">
+                        </div>
+                        <div class="google-play">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPEAAADRCAMAAAAquaQNAAABWVBMVEX///8EBgfl5eXk5OTm5uYAAADj4+Pz8/P4+Pjr6+vy8vLu7u78/Pzp6en5+fkaGxtTjrIxMjL5xIF8vrt4eHgQERK+v764uLikpKS80ap3uLrMUFqwsLBra2vQ0NBjZGRmpLZwsLiamppYWFlgnbXW1tYmJieDg4PJycmMjIxckrFrqrdxsbiGwbkhISI4ODltcGtQUFBDQ0NdmbRbXlnNzqCRlJB6u7p2xMDFUGKGx7t4e3VmaWUlKiNzc3Q6Pjc2VFVGdpRPd3WDs6lFT0gIDwOSxriFqpmlz7mCmIIiJB5+i36usqusy65fZlrD2bCuu6MuMyy2lXEfFQ3qwIeme12JaE3XzJr/y4XruXtyWj22kWOweoHQRlKZeVLRX16Smoy/SWetRE9CIiFeJiqYfIu2SXBCST6xSXWBNzwVGxKVP0udRV0pFRWZSmo8Ii1SKDtrPFGCPVwbMna5AAAVA0lEQVR4nO1d+2PbtnaGSYJv0XZiS0oqO40U2bKT2JGdOm2TOndbm3W5uduyZ7d2j25Lbpdt3eP//2EHLxIkARKkKUeKzN7eU8r8KHzAwTnAwRGAEFy24/RAxLZjBSB9y7FCkB5ID2QEMgEZOI4dg3RAGsL8TmEOgzkqWChgVg0M3TBWl8FO1C+rg1WXoZpxM1g9YwajHyKLFT0BGbGXOfRl8DAtg5PWusVfZkmw2EprvQtYWID1OoYh27bpX1zbpqxBEtaea7v0RSDpi2zbpcUGyR+3NbBQAetVw/wCLKqGxRWwRILZGVyCOXk9h3a2IoWyRFxZeuruIcPCPIyaAAGzWsMsqR8JmK+BBZUwJ6/niV1ibOcYW8ruIcPCAizJw3gZrJ4E82tglgZmlxgbwHpwxXGcgAhA+iAjkB5ID2QI0gcZgUxABuzxuJfJIizkMI/D/OWCIa7nDtfzgHUPO5T6sugeAe8WVtY9TGFxe5ijh0UFmMbgyLCEfriW/tjKlcFOX2Yr/XHaKWthvhrmqGB2Y1gkwUJTGErgCoIgipPE59IDGXLpJUkcgvRBRlyCCGIGC64HlpRhflsYsizujy3uIS3ePSxWdbbFu4eV95B6WFgFE441D/MLsCiFWcKxyrC4ApbkYW4Ztn7+2LK4nlvcsVq8e/A2Bh1g3cPi/thijAHHZRHGa507Vi2sJ8F8BSy5OszK4BIsgsuHi0sPRMilBzKUpPRYUcqw8KPCPD3Mp48jrucO1/NA6h6inUX3EJ0Sqs5tAXPMYbIJcGwtLGoOW1t/7FrcsVrcZ5Vqnftjy843Vs4EdAjzzWA5g2MKQx5cIVx+Kn1Zwv/75Bb+mpN+CeYtH0wJJ51SOFam55qqEx4yqzqlPy5azwLM5taz6I+7g+X8cQqz1t0fW4y/cKy6NrbVbSxcna6N7UJjqWCKxhKOVdVYLWExg3F99yTpVUjF4ysGQwU9rzG6rsoMdg/zK2HVtrrk/QswJOn5evljo8bSVl/XsOrGstu1MfNFtqofh2ZdYnlgjeDGttrSGt0iTDN30tjqukmQxlYbwaySrbbW2R9XjLkKwYx2Y64M1mjMVRo8tRxzyTGQimlngznyCsEQr4vKuZNlOgmyOoKZzZ0qgzX6uZOk52vlj3VRCVcZA9FHJapgFcGMa42B8LgujedyGSZpGDgJJemDjKQwsAYWLgyWNID5OlhFLNOSu0dFULIIC81gBcdaghWCki1hiljm+vnjuhwB/ZJdZY6A3S5HwFbnCNjaHAG7CKvPEaDrqwFdX01ARnSdNaDLsh5ItoYc8DXkgK0hB0GvDay3FDDEWl23SKjO9aldW1Tn+tSsLTaHqZIZ6tcWJT1fJ39cWn532+UIaGHVOQKVMH2OgJvLEdAnJRVyBBxe4w6vA4fldElpUg41CiB5Ozu8Ch0NLDSHJd3BPGNYfa5P3jsZ5/oos2+kXB8ZpnAzRrk+rWA3/rjQPcxz9tycPzbO2XOVyXduCVZwrEawsj92ST0jk1ibZll0iSJ7hrDkWrxT45TdRebeNsuv7qzoS8DYase4FraMjD+25TLNNlZMCWphN9nG1mKzjZd2BEIycsmU0en1ApA+yAjFMIDrwcAtRmGv58AkDEUgYRKGApDwNHL0sJDAnNYwTwErFDJhsFgF8/MwpwRDXM+7mUncZBsv7WxxObKNrysiQCIiNCMXehXNyIXuQRN5maQBFRIMJQEVEgyVoj4FmL9YWI/BEgOYXwWriOzZqshejWP1CrE2c39cCtEtLLK3fv54QdnGjSP0JZhZtnGLCD1ZbUz8xA+Y9ECGXHogwygKhISnkohI30/Y476A+RIsrIUlTWFRi2/jsgRDVM8bZhubL5kt40qbpOdr5I/rso2Nl767gi0021iTaKBLOPCq8xOqYOFywBpnG18t86VptvEiMl/W0h9fMYOtMtvYDLagbONyBpsm27h1AuBKwJBszxQRZFJ1iceykn0uvUz6XCZckvaM+Z/jAsyvhiFzmF8B85yaMDeS9FzhIUN3fHayeXJyskkuLk/KctNAXgvs4Hnfc4z8sbKNe8EeXr1re4b0bVydbZzMMN5YvQvjIWqXbdzbX0nCcOE3Uats42BVCQPlqUMZN8o2dqPnK0t4A0+ivBtXZBuXh6y91SUMlN1C1rE0ri7oeWarh00ZN35+gVWKh1HzbOMXjQoEXuEEEw7cRWykzoL/dUO+zx5jf8tEV4wnUfNs49MmJcD3pgDc/wbjPn0jwpdMojNSC9tohFnwAbmc34gYjTFUxBNE+g+eoi4p47NQGwOhIaSER56oZIm8yXaDAuAdhAZHQPYlHqDBaDQa4PlgNEWz0eCAMR7i8WDkJ6PBmDF2kXsx7qE+xnsIqqNzxttk2w8a5ypy08YyvQaMMUboANRy7wgD41Srh2jCFZcwhiuIhAqP0YB8MEWXhDHaw90zRk2zjRsxPkRj0U0HaBuGuLRlR+geFt9P7CCOQtGLLcoPv0UzYDxEaHMxjBtlGzdiTLgd9AeDwQQYs35czZj7PowiYHyxA717EYyrso3ZSlBPWndCTRgPgdspefchMB6Oh8NhDWPP54x7wHiM99F4v2PGfmHdqZeuO7FWVywSNmH8FLQTrjllnLqdCsb7zIY/AaNFGGMPBV0zbp5t3MhWu9Q0jYwZz1HyktQQGDzK+Ix0hG4ZN882bsT4xEMIKs39prIfh554J75AKPIRPEAZ0/tuGXvaHIF8igXynZ5DMzP8JozBFx3u7892oHGP+uSaEYKHszlnfDA7pFUwSt+Jz0b7+8PXwHU+I1MW/KbfseXS5oHocn2a2OoNadRYGFumf2WiCJD/1ukos+CdTLKNGzJesquZP3Y/GcZqf9yFd1q+a+HeaekumbFxtvF2ZnY+auFbXXWMpXWZLAYiGOPfdGtGr+UCf6zdAaXOcuE/OL/9h9dBWQqQdPAyneUK6r0T3trauv3sN4aFaV1sjJ9cHB2Nu6Jc5Z3qRiCE8fHjV3/0bT0TIPvd2fzstAVr/HZEwkbfGuCM3l0zAlH+ps2XGBPKr/74ZfV3Yfx2yJYq0XR41pQzJnEU34Tw00OTpyhjzU/hamYSlPHW8avvv//+T15X8CAxPefyA5T8WzKZmJ41pbwL1WzCZYaMGOtnEnXeiTHeOv6eXL/VUsanCToSA+VvoK3fLIpx34xx9WyxaszFGW8d/45cdzScSQTkMpsYYWBvyDTFdM24KttYivpkP98uMt46vvM7+OfOnT9VccYRmmUf473nEvu8HdNZc5mx4pH0o5RxpVsAxj111KdXG9lLGW+d36HXn/152WzjI4Te5qaC2X+cTc7kaeOHwn16pYyhV8znBzhfZweTvVPWZxhjjLefHs5f8/lp6YurZhIm/jhPGTifFjjjkK81FGvi3jQmv2KYbXMuL2xEsif7B/z+ad8ly2HkiQ3OGN/rxQmUUqyJ4Es0OSCuC4U0dEAZ4wmzQFOomZ2sC2FXKECFP66L0AvLdXx+fP7gjuD8F3+Zm93P6bpCiS+UjsSxJ8CIFhbs7AXcPwVCT8j9h/1452wIX345T9sYD9AhxqdQFhFAAUbIeX56epQQc0gZQy34z7e3CRYox1L4bJBjrIzQ63ZhSTLGx1vn5+fHD84/P3/4xZ07X8A/f3Xr1l/LugRKrTBVeJ+YbxL0ga+bYHL/nN6T4hDVDmkU8DlCUarVeIR2yCMn5EPBmK1oYGyRuBhljHym7DSIOkZP0z7+NmWs3fOFjbYVK22C8fn5g/MHQPfB53Dd/4JcQPjWD7f+JuuNAxKpLhHeEaYIQ1uEGOpFuo9I6JNaO6gIUjOUMX6JYraEA3rBu8KO8HRAo0cZ49OIr/XiHrz3A9pnT26gadqPvebZxiljQvhzej18+Pn9v2WECee/+3vx/oFKq3EgCkDGU9A8nrDnUEZyHzMQfoGgyJzxGzAIMHoboOkTnLbxRHzPPvqGtbGIkJGOSzrLJr0f087CGNdEb1Ur5oIxadyH5H8PHz68//DRXUGYcP6RPzNCsnPiXwq63BcFAMszAl0eiHuo6dEBYm1D6mMqGLvA+MUUHs4UaEcEgcn61l5qq9lFGc/Z8j4OoxRUmi2Wso1Le7BljAlVyvb+/fuP7t/96ZZ0pSWhysjv+HWJMiWDKunvcYbinjQ800Zywxk7yBsPn+ccjsT4EtSf2eqDER8hkzA3DmhX2AO7mDKOtXuw6TJfUltNGpexvfvo7t0vf/qHz9ImFmpNTZMYdODfT2N4vzfcS40PtT59qAE7ayxob4f1ftLGk6yN0evCkCXH+IJpNcHvzOfzU5syPiTmDktLV9wfN8o2zhg/ArqPKN27zwjhzxjlH279Y/YFU2qK2Hcd7k0m5JZ86QfJ3p6idN2BlHiM78HXEY0Y01UJxnif/CHfOyTGOzCUJZZrgryTTKtJnUHvf512olp/rMxgSxkzts8ePXv27PaXP31Grn8Cvj/8KM1UwUuktouUYxMRqxqlpScMXxLzy30YG6ORT9Fwp49+i9ko02cf5Yc3suXqo1PKuI/41IwxJr1kDv++LDJWZrDpshTjlDG07d3b9Pryp6++YpR/+DE/c6TpH/+cjvFOKOMjyoF+MCN+84L6qPQexHdHoxmvKsLYprNkYsZY1QnGot6+I4pEGE/RrvBHiHv8Po6nWYmAcfNsY8H47u1ntznhdz9zxv/yr8WhNVFHKDovK2tjout9qnRnKNmlKkge2SDG1d/lFvdIMIbCO2w8gqabVGMnwh+TURi56AiGMB4iliK7GXCNgK86TF3TRt4fG++OIRgLvo+/fPceGAPlr/6tPGlhST7hxQdakhekNTcEZbgNT6iJmrJaeYKiTdEFSBrIkFTDS/iPb09OSBWArzs6mu1vCsZjNIMhGgylZ2yUSeamFye7p0P0hlsrYhPkCIqpP1a2MaP7+PHX796///lnIKzgS8s+oVm+3nTfjeP+EV0Rx5fAMUzCI6GnO1DvYRwdpqtr8z2iZjAAwcPpdOpOfw/vodMGWg2c8Xzipx/RGAi+Rz+ID6HzshEmDHcucoz10VtdIn7aj4Hs49uPX3397pf3pI3/XR8GwfjexXA4PJx8yGaz0B5n0kRWvgeNdlEwGxLlcNMMN1YPk8IIBN8bDi9pz8Yv5/SZyc7OnIzGN3fZU7Ocwavqx7W2+jG9gPAvv7z/+T92dXw5H1Hs3IfKW3wSov4un0rkh+W5VzDvhKVKlJ8Rd28l17RR9sfyL0Nq/fGrlPAv//lfVXybXWSuMOLKfZaNzhQPZv644m2ya9ow8sf6MdcrQfjX/+50FR8sVDrpH16JMR0A5F9QNeaiY03QbyJDSSKJMSH86/90uxRDbHu6tPW0PBHJHqxjjHenA4TOCozjMGTj6SK3+rnT10D411//t+ulJzJHFuPJbE6venA+rE6KxROrNys8UjV30vrjU2G5gHDnfLne8ZHFaWUyd0XIMn2gNCCq9ceKGAjPr8bP3/1fpYFue8E4BOYbw529i1lx8tDBy2uyjVVz5FBUe1VY+Gql2h2TuGbijhegQTCOzX6Mnz/DSxfLtJTh2G6LpfTf3bx6LM+dDPc2Dq/ltzCL0h+3yh/rDk5c5d87XbJf/yjPWyyfqcl3uUnEPHX1LoxjcaamOMlTOlOTtbpyS6JkNX/Gh/HroO3exqv521QSQmi+tzHfI8wK3fG87lfBJj8ivjbYwd7Qiap3JBPZxpozrmHMTSND4NbYL7659OiKoCz5L759/jtz3xSWqGBeCeaZwHzyO/P0jOtcJnV2xnXrnQXZtLoIs+vOMbdqDiTXnGPeEnazt7HJWQPGO4TmzxrofIdQzY5kJVj9jmS8LugnFst3gqpzcnsLOeneQhbflMAqwILuYGEB1rsyzMnBkNTqFbsp5XcWNN6EKb/X35Lse2tYhmXaraol4+U9a8Bd8FkDpnsbu+32Ni5vr/7Rd2VfP+/U9HQFda+q3du4VIaPf7qCZPRp0Z3SCRqi1lVGP7G0R2GIWhceqkOY75RO0DCBoYVZLnc5LZek56vinRa6t3HNCGQlTzuKs5liwmeKZFYVSjPGECQ7LKrHD4vq9VYXtmSnlukPDehuJrGO/thSOlZbFxEo7DZcHxHQwBpN7VvD7DKsFN1UnzDJD22Mo3xQNFHAwqvDwgXCENVz8+NAadUt6hTRFNZkb2P3Zm9jI39cWjE3OtbXbncasAHMbG/jlqcBL8EZzNd84vPCTvV2VZsU15/qrYTd7G18JX8sMth0Zw3U7G2sO2vAeG9jS9lYVt3exkYwfbaxr982uGqb4OuFGexx3MnexkrHenMW3+r5Y+VeEYrGsnTVpz40oD3MN4NpDE41jG6/HXp8q+9mcjVhkj+u3odeeEir6I+r96G3P+Y+9M2yjT95f2x8nkSpjc3Ok9C0cd15Epo2rhtzadqYwbpycysDQ3k9rzO6jQ54aQ8zmzu1PBdG0vO18sfNzndKq6/Z+U7mMJMxl/H5TvkxVy7buOG5Px3DQjNY6WfDTWG157SV507Fk9MM5041B67pJkFXgTXMNv6E/bGt9MduXQxEl6ScC2YoYMpghlsTA7GNYbkYiK2KgRR2j4ikMLCXDwOL4LNq04kFwiJzmKeG5Xf/QJKel6KLljYoaVfB9EFJAWsYy9TBamKZahiS9Hyd/LH5icTUIHR+kHFLWFSAmeUIGCzLenxZ1s8vy/Y4rJikHC4MpkqJbgzr+hzz2mxjddJOq7Thm2zjm2zjimxjvoOk2F1RpEmJnK6IZ1lB1TlyIu/VYPJ+lTIsLMOcLmFIavXryzZulOtjBivl+uhghow/fX+szaIjj69azp6Fcv5YN5NouZpaMyXQrabWzSTMYUuwmqrKvS3CtEm0Gjejz72tdGpFf3y92cZOUF30lowNYOZt3NFQ4qOPQKief9qW6ybbGF1btnEGazcCqYTps42LI5C4eFIMzKpAhiidMSKYjDkwCUMwCXNi3QEz1bCkOSySYA0KKWBBBuvlYGs4k1i/2WLjbOOP8vvjttnGOYMjZxuDngfi5DayTwQ7nY5GfbikQdGYb8HApQYWKmBR57BIAQtNYIjruTLWZn+SkT1Jz9fJHy95tnG3EXqy2hjwPY5AhglfdUz8hC6NguSLlPTgVZ/LZFlhoQQjUoJFyRJlG1/j/Pj/AU/U2hz25i13AAAAAElFTkSuQmCC" alt="" width="150px">
+                        </div>
+                    </div>
+                </div> 
+                
+
+                
+            </div>
+        </div>
+        
+        <div class="under-container-10">
+
+        </div> 
+        
+        </div>
+    </div>
+</div>
+</body>
+</html>
