@@ -1192,12 +1192,11 @@
 
 
 /*-------------------------------------------------------- MEDIA TABLET GRANDE------------------------------------------------------------------- */
-        @media (max-width: 768px) and (min-width: 1024px) {
+        @media (max-width: 1024px) and (min-width: 768px) {
 
             .home {
-                display: grid;
-                grid-template-columns: max-content;
-                grid-template-rows: 72vh 72vh;
+                grid-template-columns: 1fr;
+                grid-template-rows: 120vh 100vh;
                 height: max-content;
             }
 
@@ -1255,65 +1254,50 @@
             }
 
             /* ------------------------2--------------------------- */
+            
             .contenedor-2 {
-                min-height: 95vh;
-                height: 100%;
-                padding: 20px 0px;
+                padding: 40px;
             }
-        
-            .column-2 {
-                display: grid;
-                grid-template-columns: 1fr; /* No funciona sin dsplay grid*/
-                gap: 10px;
-                padding: 24px 10px;
-                padding-top: 0;
-                grid-auto-rows: max-content;
+
+            .contenedor-2 .header {
+                padding: 0;
+                margin-bottom: 52px;
             }
 
             .contenedor-2 .header .title {
-                font-size: 44px; 
-                margin-bottom: 5px;
-                color: rgb(5, 5, 5);
-                display: flex;
-                flex-direction: column;
-            } 
+                font-size: 40px;
+                text-align: left;
+            }
+            
+            .contenedor-2 .column-2 {
+                padding: 0;                
+            }
+
+            .contenedor-2 .content .column-2 .section-title b {
+                font-size: 20px;
+            }
 
             .contenedor-2 .header .subtitle {
-                font-size: 18px;
-                margin-top: 15px;
+                font-size: 20px;
+                text-align: left;
             }
 
-            .column-2 .buttons-group-1 { /* 10 Botones columna 1*/
-                gap: 9px;
-                grid-template-columns: 1fr 1fr;
-                display: grid;
-                grid-auto-rows: 50px;
-            }
-
-            .column-2 .button { /* 10 Botones columna 2*/
-                background-color: #f7f9fa;
-                color: rgb(3, 3, 3);
-                border: 1px solid black;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                padding: 0px 12px;
-                height: 51px;
-                gap: 10px;
-            }
-
-            .contenedor-2 .column-1 .button {
-                background-color: transparent;
-                height: 32px;
-                width: 32px;
-            }
-
-            .contenedor-2 .content {
-                grid-template-columns: 100px 550px;
-            }
-
-            .contenedor-2 .columna-3 .contenido-img-libro {
+            .contenedor-2 .content .columna-3 {
                 display: none;
+            }
+            .contenedor-2 .content {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            
+            .contenedor-2 .content .column-1 {
+                grid-template-columns: max-content max-content max-content;
+                grid-template-rows: max-content;
+                margin-top: 40px;
+            }
+            .contenedor-2 .buttons-group-1 {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 58px;     
             }
         /* ------------------------3--------------------------- */
             .contenedor-3 {
@@ -1753,7 +1737,7 @@
         }
 
 
-/*-------------------------------------------------------- MEDIA TABLETS------------------------------------------------------------------- */
+/*-------------------------------------------------------- MEDIA TABLETS PEQ------------------------------------------------------------------- */
         @media (max-width: 767px) and (min-width: 421px) { 
             .home {
                 grid-template-columns: 1fr;
@@ -2353,7 +2337,7 @@
 
         }
 
-        @media (max-width: 520px) and (min-width: 421px) {
+        @media (max-width: 520px) and (min-width: 421px) { /* PARTE DE MEDIA TABLETS PEQ */
             .contenedor-6 .sub-contenedor-6 {
                 grid-template-columns: 350px;
                 grid-template-rows: max-content max-content;
