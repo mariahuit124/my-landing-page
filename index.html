@@ -1193,10 +1193,12 @@
 
 /*-------------------------------------------------------- MEDIA TABLET GRANDE------------------------------------------------------------------- */
         @media (max-width: 768px) and (min-width: 1024px) {
+
             .home {
-                grid-template-columns: 1fr;
-                grid-template-rows: 120vh 100vh;
-                height: 1550px;
+                display: grid;
+                grid-template-columns: max-content;
+                grid-template-rows: 72vh 72vh;
+                height: max-content;
             }
 
             .home .banner {
@@ -1245,7 +1247,7 @@
             }
 
             .home .registro .formulario-box {
-                margin-left: 160px;
+                margin: 0 auto;
             }
 
             .home .formulario-box .button-image {
@@ -1507,8 +1509,6 @@
             .contenedor-6 .logos-container .cont-logos-4 .logo img {
                 height: unset;
                 width: 100%;
-                
-
             }
 
             /* ------------------------ 7 --------------------------- */
@@ -1575,7 +1575,7 @@
                 margin-left: 90px;
                 margin-top: 30px;
                 width: 82%;
-                }
+            }
 
             .contenedor-8 br {
                 display: inline;
@@ -1612,8 +1612,6 @@
                 font-size: 34px;
             }
 
-
-        
         /* ------------------------ 9 --------------------------- */
             .contenedor-9 .sub-contenedor-9 {
                 grid-template-columns: 1fr 1fr;
@@ -1753,11 +1751,6 @@
             }
 
         }
-
-
-
-
-         
 
 
 /*-------------------------------------------------------- MEDIA TABLETS------------------------------------------------------------------- */
