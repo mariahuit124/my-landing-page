@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Tablets CodeCademy</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Apercu", "Lato", sans-serif;
+            /*font-weight: 400;*/
+            font-style: normal;
+        }
+        body { /* fondo de página*/
+            font-family: sans-serif; /* Tipo de letra */
+            background-color: #fff0e5;
+            color: #0c0d0de4;
+            margin: 0; /* Define el espacio exterior alrededor de un elemento */
+            padding: 0; /* Espacio interior entre el contenido y el borde del elemento */
+            position: relative;
+        }
+
+        header { /* encabezado */
+            background-color: #0b0b0b;
+            color: white ;
+            text-align: center;
+            padding: 1px; /* Espacio interior entre el contenido y el borde del elemento */
+        }
+        header p { /* Letra de encabezado*/
+            font-size: 15px;
+        color: white;
+        }
+        header p span {
+            font-size: 13px;
+            color: rgb(251, 187, 48);
+            font-weight: bold; 
+        }
+        nav { /* Barra de menú */
+            text-align: left;
+            font-size: 15px;
+        }
+
+        nav a { /* Color de letra en barra de menú */
+            color: rgb(15, 14, 14); /* Color de texto */
+            margin: 0 15px; /* Define el espacio exterior alrededor de un elemento */
+            text-decoration: none; /* Agrega o elimina decoraciones del texto como subrayado o tachado*/
+            margin-right: 4px
+        }
+
+        nav a:hover { /* Ubicar */
+            color: #590ae3;
+        }
+
+        .main-content { /* Caja donde se ubica el párrafo */
+            padding: 40px; /* Espacio interior entre el contenido y el borde del elemento */
+            background-color: rgb(252, 246, 246); /* Color de fondo de un elemento.*/ 
+            margin: 40px; /* ESpacio entre laterales */
+            border-radius: 18px; /* Da forma a los bordes */
+            box-shadow: 0 4px 8px rgba(77, 68, 68, 10); /* Sombreado en los bordes de un cuadro, imagen*/
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px; /* Espacio interior entre el contenido y el borde del elemento */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .encabezado {
+            display: grid;
+            grid-template-columns: max-content 3fr max-content;
+            width: 100%;
+            background-color: #fff0e5;
+            padding: 12px 95px;
+            align-items: center;
+        }
+        .log-in-btn {
+            color: black;
+            font-size: 17px;
+            background: transparent;
+            border: none;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .acciones 
+        .sign-up-btn {
+            color: white;
+            font-size: 14px;
+            background-color: #590ae3;
+            border: none;
+            padding: 10px 25px;
+            margin: 10px;
+            border-radius: 4px;
+            font-weight: bold
+
+        }
+        .acciones {
+            display: grid;
+            grid-template-columns: max-content max-content max-content;
+            align-items: center;
+            gap: 8px;
+        }
+        .home {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 100vh;
+        }
+        .registro {
+            padding-top: 32px;
+            padding-left: 64px;
+        }
+        .formulario-box {
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .input-box {
+            width: 100%;
+            padding: 13px;
+            margin: 4px 0px;
+            border-radius: 2px;
+            border: 1px solid rgb(145, 143, 143);
+            font-size: 16px;
+            outline-color: #590ae3;
+        }
+        .input-label {
+            font-size: 15px;
+        }
+        .formulario
+        .sign-up-btn {
+            color: white;
+            font-size: 14px;
+            background-color: #590ae3;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            width: 100%;
+
+        }
+        .registro h3 { /*Join the millions learning */
+            color: black;
+            font-size: 24px;
+            line-height: 40px;
+
+        }
+        .registro-requerido { /* Required*/
+            color: black;
+            font-size: 17px;
+            padding: 18px 0px;
+        }
+        .terminos-y-condiciones {
+            color: black;
+            font-size: 12px;
+            margin-top: 25px;
+        }
+        .button-image {
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #565454;
+            background-color: white; 
+        }
+        .sign-up-option {
+            font-weight: bold;
+        }
+        .banner {
+            position: relative;
+        }
+        .carrusel-imagen{
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            left: 0; 
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .carrusel-textos {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 70px 140px;
+        }
+        .texto-1 {
+            color: black;
+            font-size: 60px;
+            margin: 0;
+        }
+        .texto-black-1 {
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            margin-bottom: 12px;
+            max-width: 235px;
+            padding: 4px;
+        
+        }
+        .texto-black-2 {
+            background-color: black;
+            font-size: 15px;
+            color: white;
+            max-width: 220px;
+            padding: 4px;
+        }
+        
+      /*-------------------------------------------------------- MEDIA ------------------------------------------------------------------- */
+        @media (min-width: 600px) and (max-width: 1024px ) {
+            .home {
+                grid-template-columns: 1fr;
+                grid-template-rows: 75vh 100vh;        
+            }
+        
+            .home .banner {
+                background: url(https://res.cloudinary.com/dpffdz8ho/image/upload/v1733588810/temp/svgviewer-png-output_krkfvf.png);
+                background-size: 100px;
+            }
+            .home .banner .carrusel-imagen img {
+                height: unset;
+                width: 100vw;
+            }
+            .carrusel-textos {
+                padding: 32px 24px;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr max-content max-content;
+                gap: 5px;
+                padding-bottom: 100px;
+                margin: 0;                
+            }
+
+            .home .banner .carrusel-textos .texto-1 {
+                font-size: 40px;
+                width: 200px;
+            }
+
+            .home .banner .carrusel-textos .texto-black-1 {
+                margin: 0;
+                letter-spacing: 1.5px;
+                max-width: unset;
+                width: 100%;
+            }
+
+            .home .banner .carrusel-textos .texto-black-2 {
+                margin: 0;
+                letter-spacing: 1.5px;
+            }
+
+            .home .banner .carrusel-textos .texto-1::after {
+                background-color: #fff0e5;
+            }
+
+            .registro {
+                padding: 10px;
+            }
+
+            .registro .formulario-box h3 {
+                background-color: #fff0e5;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <section class="acciones">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPB_pDGaTKHoQVE-76Dw57Wda-X6IWONmGJw&s" alt="" height="22px">
+        <button class="log-in-btn">Log In</button>
+        <button class="sign-up-btn">Sign Up</button>
+    </section>
+    <div class="home">
+        <div class="banner">
+            <div class="carrusel-imagen">
+                <img src="https://images.ctfassets.net/go6kr6r0ykrq/42kfrUxHoba5qfF9jh8ud/e7d1b60a4d30055c9ef46476d64d554b/Carousel_v2_sqaure.svg" alt="" height="550px"> <img src="" alt="">
+            </div>
+            <div class="carrusel-textos">
+                <h3 class="texto-1">BUILD AI SKILLS</h3> 
+                <div class="texto-black-1">AI courses and case studies
+                    on ChatGPT, NLP, and more</div>
+                <div class="texto-black-2">AI-powered features for
+                    efficient learning</div>
+            </div>      
+        </div>
+        <div class="registro">
+            <div class="formulario-box">
+                <h3>Join the millions learning to code with Codecademy for free</h3>
+                <p class="registro-requerido">* Required</p>
+                <form class="formulario" action="/submit" method="POST">
+                    
+                    <label class="input-label" for="email*">Email*:</label>
+                    <br>
+                    <input class="input-box" type="text" id="nombre" name="nombre" required><br><br>
+            
+                    <label class="input-label" for="password*">Password*:</label>
+                    <br>
+                    <input class="input-box" type="email" id="email" name="email" required><br><br>
+                    
+                    <button class="sign-up-btn" type="submit">Sign Up</button>
+                </form>
+                <p class="terminos-y-condiciones">
+                    By signing up, you agree to the Codecademy <a href="https://www.codecademy.com/terms" target="_blank" >Terms of Service</a> and <a href="https://www.codecademy.com/policy" target="_blank">Privacy Policy.</a> This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank">Terms of Service</a> apply.
+                </p>
+                <p class="sign-up-option">Or sign up using</p>
+                <div>
+                    <button class="button-image">
+                        <img src="https://w7.pngwing.com/pngs/869/485/png-transparent-google-logo-computer-icons-google-text-logo-google-logo.png" alt="" height="21px">
+                    </button>
+                    <button class="button-image">
+                        <img src="https://e7.pngegg.com/pngimages/631/1001/png-clipart-computer-icons-facebook-social-media-email-share-icon-facebook-blue-text-thumbnail.png" alt="" height="21px">
+                    </button>  
+                    <button class="button-image">
+                        <img src="https://w7.pngwing.com/pngs/646/324/png-transparent-github-computer-icons-github-logo-monochrome-head-thumbnail.png" alt="" height="21px">
+                    </button>
+                    <button class="button-image">
+                        <img src="https://e7.pngegg.com/pngimages/560/373/png-clipart-apple-computer-icons-apple-heart-logo.png" alt="" height="21px">
+                    </button>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+   
+</body>
+</html>
