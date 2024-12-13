@@ -133,8 +133,10 @@
            /*-----------------------------------------------------PARTE 2 PAGINA-------------------------------------------------- */
 
         .contenedor-2 {
-            padding: 20px;
-            min-height: 100vh;
+            padding: 40px 0px;
+            padding-bottom: 90px;
+            /* min-height: 100vh; */
+        
         }
 
         .header { /* Caja Título y subtítulo */
@@ -431,6 +433,15 @@
             grid-template-rows: max-content max-content max-content;
             gap: 32px;     
         }
+
+        .img-page-4.img-page-4-desktop {
+            display: none;
+        }
+
+        .img-page-4.img-page-4-mobile {
+            display: block;
+        }
+
     
         .header-4 {
             text-align: center;
@@ -1190,25 +1201,63 @@
             padding-top: 0;
         }
 
+/*-------------------------------------------------------- MEDIA DESKTOP------------------------------------------------------------------- */
+
+        @media (min-width: 1025px) {
+            .img-page-4.img-page-4-desktop {
+                display: block;
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            .img-page-4.img-page-4-mobile {
+                display: none;
+            }
+
+            .img-page-4.img-page-4-desktop img {
+                width: 100%;
+            }
+
+            /* ----------------------------------------------- */
+            .contenedor-7 .story-card {
+                grid-template-rows: max-content;
+            }
+
+
+
+            .contenedor-7 .story-card img {
+                margin-top: 20px;
+                height: 280px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            .contenedor-7 .story-card .titles-cards {
+                margin: 0;
+            }
+        }
+
+
 
 /*-------------------------------------------------------- MEDIA TABLET GRANDE------------------------------------------------------------------- */
         @media (max-width: 1024px) and (min-width: 768px) {
 
             .home {
                 grid-template-columns: 1fr;
-                grid-template-rows: 120vh 100vh;
+                grid-template-rows: 1fr 1fr;
                 height: max-content;
+            
             }
-
 
             .home .banner {
                 background: url(https://res.cloudinary.com/dpffdz8ho/image/upload/v1733588810/temp/svgviewer-png-output_krkfvf.png);
-                background-size: 100px;
+                background-size: 200px;
                 padding-top: 20px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
+                max-height: 700px;
+                height: 100vw;
             }
 
             .home .carrusel-imagen {
@@ -1269,12 +1318,12 @@
 
             /* ------------------------2--------------------------- */
             .contenedor-2 {
+                display: grid;
                 grid-template-columns: 1fr;
-                grid-template-rows:  1fr 1fr;
+                grid-template-rows: max-content max-content;
                 gap: 15px;
-                padding: 40px;
-                padding-bottom: 10px;
-                min-height: 90vh;
+                padding: 60px 0px;
+                height: max-content;
             }
 
             .contenedor-2 .header {
@@ -1295,14 +1344,17 @@
             .contenedor-2 .column-2 {
                 padding: 0;
                 grid-template-columns: 1fr;
-                grid-template-rows: 35px 1fr;                
+                grid-template-rows: max-content max-content;                            
             }
 
             .contenedor-2 .content {
                 display: grid;
-                grid-template-columns: 100px 1fr;
+                grid-template-columns: max-content 1fr;
                 grid-template-rows: max-content;
-                gap: 15px;
+                gap: 25px;
+                padding-right: 40px;
+                max-width: 600px;
+                width: 100%;
             }
 
             .contenedor-2 .content .column-2 .section-title b {
@@ -1323,16 +1375,15 @@
             .contenedor-2 .content .column-1 .button {
                 width: 35px;
                 height: 35px; 
+            
             }
-
 
             .contenedor-2 .buttons-group-1 {
                 grid-template-columns: 1fr 1fr;
-                grid-auto-rows: 58px;
-                height: 80px;
+                grid-auto-rows: max-content;
                 gap: 10px;
-                row-gap: 0;
-                margin: 0;        
+                row-gap: 10px;
+                margin: 0;                    
             }
 
             .contenedor-2 .buttons-group-1 .button {
@@ -1340,6 +1391,7 @@
                 height: 50px;
                 margin: 0;
                 font-size: 15px;
+            
             }
 
         /* ------------------------3--------------------------- */
@@ -1633,7 +1685,6 @@
                 /* margin-left: 90px; */
                 margin-top: 30px;
                 /* width: 82%; */
-            
             }
 
             .contenedor-8 br {
@@ -1660,12 +1711,10 @@
                 width: 100%;
                 gap: 5px;
                 
-            
             }
 
             .contenedor-8 .right-container-8 .right-section {
                 width: 120px;
-            
             }
 
             .contenedor-8 .right-container-8 .right-section p {
@@ -1838,14 +1887,16 @@
         @media (max-width: 767px) and (min-width: 421px) { 
             .home {
                 grid-template-columns: 1fr;
-                grid-template-rows: 120vh 100vh;
+                grid-template-rows: max-content 100vh;
                 height: max-content;
             }
 
             .home .banner {
                 background: url(https://res.cloudinary.com/dpffdz8ho/image/upload/v1733588810/temp/svgviewer-png-output_krkfvf.png);
                 padding-top: 20px;
-                background-size: 100px;
+                background-size: 200px;
+                max-height: 650px;
+                height: 100vh;
             }
             .home .banner .carrusel-imagen img {
                 height: unset;
@@ -2230,19 +2281,24 @@
 
         /* ------------------------ 8 --------------------------- */
             .contenedor-8 {
-                min-height: 60vh;
+                min-height: unset;
                 height: 100%;
+                padding-top: 100px;
+                padding-bottom: 100px;
+                padding-left: 30px;
             }
 
             .contenedor-8 .sub-contenedor-8 {
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 400px;
-                gap: 90px;
-                margin-left: 80px;
-                margin-top: 30px;
-                width: 82%;
+                grid-template-rows: max-content;
+                gap: 50px;
+                margin: 0;
+                width: 100%;
                 padding: 0;
-                height: 100%;
+                height: max-content;
+                min-height: unset;
+                justify-content: center;
+                justify-items: center;
             }
 
             .contenedor-8 br {
@@ -2252,47 +2308,55 @@
             .contenedor-8 .sub-contenedor-8 .left-container-8 {
                 padding: 0;
                 overflow-x: hidden;
-                width: 270px;
+                width: 100%;
+                justify-content: center;
+                justify-items: center;
             }
                         
             .contenedor-8 .left-container-8 .join-in-on-something-big {
                 font-size: 44px;
                 text-align: left;
                 display: inline-block;
-                padding: 30px 20px 30px 20px;
+                padding: 0;
+                max-width: 240px;
+                margin: 0;
+                height: max-content;
             }
 
             .contenedor-8 .sub-contenedor-8 .right-container-8 {
                 grid-template-columns: 1fr;
-                grid-template-rows: 80px 85px 105px;
+                grid-template-rows: max-content max-content max-content;
                 padding: 0;
                 overflow-x: hidden;
-                width: 150px;
-                height: 77%; 
+                width: max-content;
                 gap: 5px;
-                margin-top: 30px;
+                margin: 0;
+                align-items: flex-start;
+                align-content: flex-start;
+                height: max-content;            
             }
 
             .contenedor-8 .right-container-8 .right-section {
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr 1fr;
-                width: 145px;
-                height: 70%;
-                /* align-items: flex-start; */
-                justify-content: right;
-                text-align: right;
+                width: 100px;
+                place-items: center;
+            
             }
 
             .contenedor-8 .right-container-8 .right-section p {
                 font-size: 16px;
+                align-items: center;
                 justify-content: center;
                 text-align: center;
             }
 
             .contenedor-8 .right-container-8 .right-section h3 {
                 font-size: 34px;
+                align-items: center;
                 justify-content: center;
                 text-align: center;
+
             }
 
         /* ------------------------ 9 --------------------------- */
@@ -2479,19 +2543,23 @@
             .contenedor-8 {
                 height: max-content;
                 min-height: unset;
+                padding: 0;
+                padding-left: 20px;
+                padding: 48px 12px;
             }
 
             .contenedor-8 .sub-contenedor-8 {
-                grid-template-columns: max-content;
-                grid-template-rows: 130px 130px;
-                gap: 10px;
-                margin-top: 10px;
+                grid-template-columns: 1fr;
+                grid-template-rows: max-content max-content;
+                gap: 70px;
             }
 
             .contenedor-8 .sub-contenedor-8 .left-container-8 {
                 padding: 0;
                 overflow-x: hidden;
                 width: 100%;
+                /* justify-content: flex-start; */
+                justify-items: flex-start;
             }
                         
             .contenedor-8 .left-container-8 .join-in-on-something-big {
@@ -2501,10 +2569,18 @@
             }
 
             .contenedor-8 .sub-contenedor-8 .right-container-8 {
+                grid-template-columns: max-content max-content max-content;
+                grid-template-rows: max-content;
                 padding: 0;
                 overflow-x: hidden;
                 width: 100%;
+                justify-content: space-between;
             }
+
+            .contenedor-8 .right-container-8 .right-section {
+                width: max-content;
+            }
+
 
             .contenedor-8 .right-container-8 .right-section p {
                 font-size: 16px;
@@ -2561,11 +2637,14 @@
         @media (max-width: 420px ) {
             .home {
                 grid-template-columns: 1fr;
-                grid-template-rows: 75vh 100vh;
+                grid-template-rows: max-content 100vh;
             }
+            
             .home .banner {
                 background: url(https://res.cloudinary.com/dpffdz8ho/image/upload/v1733588810/temp/svgviewer-png-output_krkfvf.png);
                 background-size: 100px;
+                max-height: 600px;
+                height: 100vh;
             }
             .home .banner .carrusel-imagen img {
                 height: unset;
@@ -2599,7 +2678,7 @@
             }
 
             .home .banner .carrusel-textos .texto-1::after {
-                /* background-color: #fff0e5; */
+                background-color: #fff0e5;
             }
 
             .registro {
@@ -2607,7 +2686,7 @@
             }
 
             .registro .formulario-box h3 {
-                /* background-color: #fff0e5; */
+                background-color: #fff0e5;
             }
         /* ---------------------------------------------------- */
             .contenedor-2 {
@@ -2689,7 +2768,7 @@
             }
             /* -----------------------4----------------------------- */
             .contenedor-4 {
-                padding: 40px 10px;
+                padding: 40px 20px;
             }
 
             .contenedor-4 .sub-contenedor-4 {
@@ -2707,15 +2786,15 @@
             }
 
             .contenedor-4 .sub-contenedor-4 .contenedor-information {
-                padding: 20px 30px 20px 10px;
-                grid-template-columns: 280px;
+                padding: 0;
+                grid-template-columns: 1fr;
                 grid-template-rows: max-content max-content;
-                gap: 5px 10px;
+                gap: 5px 10px;            
             }
             
             .contenedor-4 .cont-information-2 img {
                 height: unset;
-                width: 85vw;
+                width: 100%;
             }
 
             .contenedor-4 .purple-container-1 .title-ai-assisted-container {
@@ -2723,9 +2802,10 @@
             }
 
             .contenedor-4 .purple-container-2 .various-titles {
-                grid-template-columns: 300px;
+                grid-template-columns: 1fr;
                 grid-template-rows: max-content;
                 color: #acaeb6;      
+            
             }
             .contenedor-4 .acciones-4 .buttons {
                 justify-content: left;
@@ -2744,9 +2824,10 @@
             }
 
             .contenedor-5 .sub-contenedor-5 .information-img {
-                width: 370px;
+                width: 100%;
                 padding-left: 5px;
                 justify-content: center;
+
             }
 
             .contenedor-5 .information-text .h3-powered-by-ai {
@@ -2765,15 +2846,17 @@
 
             /* -------------------------6--------------------------- */
             .contenedor-6 .sub-contenedor-6 {
-                grid-template-columns: 350px;
+                grid-template-columns: 1fr;
                 grid-template-rows: max-content max-content;
                 gap: 10px;
                 padding: 10px 0px;
+           
             }
 
             .contenedor-6 .text-container-6 .h3-equip {
                 overflow: hidden;
                 max-width: 100%;
+                
             }
 
             .contenedor-6 .sub-contenedor-6 .text-container-6 {
@@ -2781,8 +2864,9 @@
             }
 
             .contenedor-6 .sub-contenedor-6 .logos-container {
-                grid-template-columns: max-content;
-                padding: 10px 10px;
+                grid-template-columns: 1fr;
+                padding: 0;
+            
             }
 
             .contenedor-6 .logos-container .cont-logos-4 {
@@ -2876,6 +2960,7 @@
                 padding: 0;
                 overflow-x: hidden;
                 width: 100%;
+                gap: 0;
             }
 
             .contenedor-8 .right-container-8 .right-section p {
@@ -3114,7 +3199,7 @@
                 <div class="cont-information-1">
                     <div class="purple-container-1">
                         <div class="cont-information-2">
-                            <div class="img-page-4">
+                            <div class="img-page-4 img-page-4-mobile">
                                 <img src="https://images.ctfassets.net/go6kr6r0ykrq/2J9Iiiot6gqvSzqc0QLd8l/581fa9bef7e50f2a3a939b1637cc3646/ala_demo.png" alt width="30%">
                             </div>
                         <div class="title-ai-assisted-container">
@@ -3131,7 +3216,11 @@
                         </div>
                     </div>
                 </div>                
-                </div>                
+                </div>
+                <div class="img-page-4 img-page-4-desktop">
+                    <img src="https://images.ctfassets.net/go6kr6r0ykrq/2J9Iiiot6gqvSzqc0QLd8l/581fa9bef7e50f2a3a939b1637cc3646/ala_demo.png">
+                </div>
+    
             </div>
             <div class="acciones-4">
                 <div class="buttons">
@@ -3140,6 +3229,7 @@
                 </div>
             </div>
         </div>                
+    
     </div>       
 
     <div class="contenedor-5">
